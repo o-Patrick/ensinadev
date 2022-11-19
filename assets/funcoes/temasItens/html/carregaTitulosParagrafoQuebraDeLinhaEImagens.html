@@ -1,0 +1,70 @@
+<h2>Títulos, parágrafo, quebra de linha e imagens</h2>
+
+<p>Algumas tags mais básicas que tem são de títulos, parágrafo e imagem.</p>
+
+<p>Para título existem 6, começando com h1 e indo até h6, então:</p>
+
+<section class='exemploCodigo'>
+	<div class='codigo'>
+      <code>
+         <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+         <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+         <span class="escondido">&lt;head&gt;</span>
+         <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+         <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+         <span class="escondido">&lt;/head&gt;</span>
+         <span class="escondido">&lt;body&gt;</span>
+         &nbsp;&nbsp;&lt;h1&gt;&lt;/h1&gt; <br/>
+         &nbsp;&nbsp;&lt;h2&gt;&lt;/h2&gt; <br/>
+         &nbsp;&nbsp;&lt;h3&gt;&lt;/h3&gt; <br/>
+         &nbsp;&nbsp;&lt;h4&gt;&lt;/h4&gt; <br/>
+         &nbsp;&nbsp;&lt;h5&gt;&lt;/h5&gt; <br/>
+         &nbsp;&nbsp;&lt;h6&gt;&lt;/h6&gt; <br/>
+         <span class="escondido">&lt;/body&gt;</span>
+         <span class="escondido">&lt;/html&gt;</span>
+      </code>
+   </div>
+ 
+   <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>Por padrão o navegador deixa elas num tamanho maior no h1 e que vai diminuindo até o h6 (tudo em negrito), mas isso não significa que os títulos de números diferentes tenham um naturalmente tamanho diferente, é só pra gente conseguir diferenciar na hora antes de colocar o CSS. Na verdade, a diferença de números mostra uma hierarquia, então o h1 mostra que aquele título é do tipo mais importante, o h2 não é tão importante quanto o h1, mas mais que o h3, isso acontecendo até o h6.</p>
+
+<p>Pra parágrafo tem a tag &lt;p&gt;&lt;/p&gt;, na qual se coloca partes maiores de texto, pulando automaticamente uma linha em relação ao que estiver antes e depois das tags.</p>
+
+<p>Também dá pra pular linha (oficialmente "quebra de linha") usando &lt;br&gt;. Esta é uma das tags sem fechamento, por isso coloquei só &lt;br&gt; ao invés de &lt;br&gt;&lt;/br&gt;. Em XHTML ficaria &lt;br/&gt;, mas novamente, vamos ficar no padrão HTML5 (sem a barra).</p>
+
+<p>Para imagens é a tag &lt;img&gt;. Também não tem fechamento, já falamos do porquê. Para indicar qual imagem usar, precisa colocar o atributo src="" que significa source e vai mostrar o caminho à fonte da imagem que você quer. No caso da imagem estar na mesma pasta do arquivo .html, pode colocar assim: src="nome.jpg". Se ela está em uma pasta dentro da pasta do arquivo, precisa indicar isso também: src="nomePasta/nomeImagem.jpg". Caso você ainda não tenha o caminho do arquivo, pode colocar um # em src (meio que enchendo linguiça) src="#".</p>
+
+<p>Aqui um código para visualizar como os itens são mostrados com os estilos que a gente tem:</p>
+
+<section class='exemploCodigo'>
+	<div class='codigo'>
+		<code>
+         <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+         <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+         <span class="escondido">&lt;head&gt;</span>
+         &nbsp;&nbsp;<span class="escondido">&lt;meta charset="UTF-8"&gt;</span>
+         &nbsp;&nbsp;<span class="escondido">&lt;title&gt;Document&lt;/title&gt;</span>
+         <span class="escondido">&lt;/head&gt;</span>
+         <span class="escondido">&lt;body&gt;</span>
+         &nbsp;&nbsp;<h1>Aqui é o título mais importante</h1>
+         &nbsp;&nbsp;<h2>Aqui é o segundo título mais importante</h2>
+         &nbsp;&nbsp;<h3>Aqui é o terceiro título mais importante</h3>
+         &nbsp;&nbsp;<h4>Aqui é o quarto título mais importante</h4>
+         &nbsp;&nbsp;<h5>Aqui é o quinto título mais importante</h5>
+         &nbsp;&nbsp;<h6>Aqui é o último título mais importante</h6>
+         &nbsp;&nbsp;<p>Aqui é um parágrafo</p>
+         <span class="escondido">&nbsp;&nbsp;</span><img src="../../assets/img/html/pexels-yuliya-kosolapova-11066975.jpg" alt="Vaca em imagem em página HTML" class="imgExplicacao" />
+         <span class="escondido">&nbsp;&nbsp;</span><p>Aqui em cima é a imagem desta bela vaca de franja.</p>
+         <span class="escondido">&nbsp;&nbsp;&lt;!-- A imagem não vai aparecer ao executar no nosso editor, mas seguindo o que foi explicado, é possível mostrar qualquer imagem em um editor mais completo --&gt;</span>
+         <span class="escondido">&lt;/body&gt;</span>
+         <span class="escondido">&lt;/html&gt;</span>
+      </code>
+  </div>
+
+   <button class='btn btnTestar' onclick="carregaEditor(1)">Testar</button>
+</section>
+
+
+<p>Tendo uma noção de como funciona, vamos voltar ao que compõe uma tag. Já vimos que existem aberturas (ex: &lt;head&gt;) e fechamentos (ex: &lt;/head&gt;), ou mesmo tags sozinhas (ex: &lt;br&gt;). Quando explicava a tag para imagens, citei o atributo src="" que mostra o caminho que o navegador deve seguir para encontrar aquela imagem. O caminho colocado dentro desse atributo é o valor dele. Portanto, as tags são compostas por abertura e fechamento (na maioria dos casos) e dentro da abertura, é possível colocar atributos e dentro dos atributos, seus respectivos valores: &lt;tag atributo="valor"&gt;&lt;/tag&gt; OU &lt;tag atributo="valor"&gt;.</p>

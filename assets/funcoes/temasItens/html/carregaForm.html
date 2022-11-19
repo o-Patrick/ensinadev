@@ -1,0 +1,337 @@
+<h2>Form</h2>
+
+<p>As tags &lt;form&gt;&lt;/form&gt; indicam que tudo o que estiver dentro delas faz parte de um formulário. Não tem segredo nisso, é bem autoexplicativo.</p>
+
+<h3>Input</h3>
+
+<p>Como um formulário é composto por campos (espaços) em que as pessoas podem colocar os dados que a página pede (ex: nome, número de celular, endereço etc.). Para criar esses campos existe a tag &lt;input&gt;. Input pode ser traduzido como "inserir", então elas servem para inserir vários tipos de dados diferentes dentro de um &lt;form&gt;&lt;/form&gt;.</p>
+
+<p>Sozinha, a tag &lt;input&gt; não faz muita coisa. Mas um atributo muito imporante para ela é o type="" que significa tipo, idicando exatamente o tipo de campo que deve aparecer:</p>
+&lt;input type=""&gt;
+
+<p>Por padrão o tipo é "text" (texto), por isso se colocarmos &lt;input&gt; sem mais nada escrito, o campo automaticamente poderá receber qualquer tipo de texto (letras, números, símbolos etc.):</p>
+
+<section class='exemploCodigo'>
+	<div class='codigo'>
+      <code>
+        <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+        <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+        <span class="escondido">&lt;head&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+        <span class="escondido">&lt;/head&gt;</span>
+        <span class="escondido">&lt;body&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;</span> &lt;input type="text"&gt;
+        <span class="escondido">&lt;/body&gt;</span>
+        <span class="escondido">&lt;/html&gt;</span>
+      </code>
+    </div>
+
+    <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>Vira:</p>
+
+<input type="text">
+
+<ol>
+  <p>Porém existem vários outros types, como:</p>
+    
+  <li>
+    <p>"number": para números, mostra duas setinhas para a pessoa mudar os números sem precisar digitar (mas pode):</p>
+
+    <section class='exemploCodigo'>
+      <div class='codigo'>
+        <code>
+          <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+          <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+          <span class="escondido">&lt;head&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+          <span class="escondido">&lt;/head&gt;</span>
+          <span class="escondido">&lt;body&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="number"&gt;
+          <span class="escondido">&lt;/body&gt;</span>
+          <span class="escondido">&lt;/html&gt;</span>
+        </code>
+      </div>
+      <button class='btn btnTestar' onclick="carregaEditor(1)">Testar</button>
+    </section>
+
+    <p>Vira:</p>
+
+    <input type="number">
+
+    <p>Outro atributo muito interessante para o &lt;input type="number"&gt; é o step="". Pode ser traduzido como "passo" ou "intervalo", sendo o intervalo pelo qual as setas desse tipo de input altera o valor (que por padrão é 1):</p>
+
+    <section class='exemploCodigo'>
+      <div class='codigo'>
+        <code>
+          <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+          <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+          <span class="escondido">&lt;head&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+          <span class="escondido">&lt;/head&gt;</span>
+          <span class="escondido">&lt;body&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="number" step="0.5"&gt; <br />
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;!-- Usando as setas, o número será alterado de 0.5 em 0.5 --&gt;
+          <span class="escondido">&lt;/body&gt;</span>
+          <span class="escondido">&lt;/html&gt;</span>
+        </code>
+      </div>
+    
+      <button class='btn btnTestar' onclick="carregaEditor(2)">Testar</button>
+    </section>
+  
+    <p>Vira:</p>
+
+    <input type="number" step="0.5">
+
+    <p><sub>Obs: lembrando que números decimais (tipo 0,5) para as linguagens sempre é usado ponto (.) no lugar de vírgula (,). Por isso usamos 0.5 e não 0,5 no step="".</sub></p>
+  </li>
+
+  <li>
+    <p>"button": um botão genérico que também precisa do atributo value="" (valor) para o usuário não ver algo vazio:</p>
+
+    <section class='exemploCodigo'>
+      <div class='codigo'>
+        <code>
+          <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+          <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+          <span class="escondido">&lt;head&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+          <span class="escondido">&lt;/head&gt;</span>
+          <span class="escondido">&lt;body&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="button" value="Exemplo"&gt;
+          <span class="escondido">&lt;/body&gt;</span>
+          <span class="escondido">&lt;/html&gt;</span>
+        </code>
+      </div>
+    
+      <button class='btn btnTestar' onclick="carregaEditor(3)">Testar</button>
+    </section>
+
+    <p>Vira:</p>
+
+    <input type="button" value="Exemplo">
+  </li>
+
+  <li>
+    <p>"checkbox": caixinhas que podem ser assinaladas ao mesmo tempo:</p>
+    
+    <section class='exemploCodigo'>
+      <div class='codigo'>
+        <code>
+          <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+          <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+          <span class="escondido">&lt;head&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+          <span class="escondido">&lt;/head&gt;</span>
+          <span class="escondido">&lt;body&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="checkbox"&gt; Exemplo <br />
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="checkbox"&gt; Exemplo <br />
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="checkbox"&gt; Exemplo <br />
+          <span class="escondido">&lt;/body&gt;</span>
+          <span class="escondido">&lt;/html&gt;</span>
+        </code>
+      </div>
+      
+      <button class='btn btnTestar' onclick="carregaEditor(4)">Testar</button>
+    </section>
+
+    <p>Vira:</p>
+
+    <input type="checkbox"> Exemplo <br />
+    <input type="checkbox"> Exemplo <br />
+    <input type="checkbox"> Exemplo <br />
+  </li>
+
+  <li>
+    <p>"radio": um círculo que, no caso de existirem várias opções, somente um deve ser selecionado. Para isso, o atributo name="" deve ser o mesmo para todos:</p>
+
+    <section class='exemploCodigo'>
+      <div class='codigo'>
+        <code>
+          <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+          <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+          <span class="escondido">&lt;head&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+          <span class="escondido">&lt;/head&gt;</span>
+          <span class="escondido">&lt;body&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="radio" name="teste"&gt; Exemplo <br />
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="radio" name="teste"&gt; Exemplo <br />
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="radio" name="teste"&gt; Exemplo <br />
+          <span class="escondido">&lt;/body&gt;</span>
+          <span class="escondido">&lt;/html&gt;</span>
+        </code>
+      </div>
+
+      <button class='btn btnTestar' onclick="carregaEditor(5)">Testar</button>
+    </section>
+    
+    <p>Vira:</p>
+    
+    <input type="radio" name="teste"> Exemplo <br />
+    <input type="radio" name="teste"> Exemplo <br />
+    <input type="radio" name="teste"> Exemplo <br />
+  </li>
+
+  <li>
+    <p>"date": um campo pequeno que, quando clicado, mostra um calendário para inserir uma data:</p>
+
+    <section class='exemploCodigo'>
+      <div class='codigo'>
+        <code>
+          <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+          <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+          <span class="escondido">&lt;head&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+          <span class="escondido">&lt;/head&gt;</span>
+          <span class="escondido">&lt;body&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="date"&gt;
+          <span class="escondido">&lt;/body&gt;</span>
+          <span class="escondido">&lt;/html&gt;</span>
+        </code>
+      </div>
+  
+      <button class='btn btnTestar' onclick="carregaEditor(6)">Testar</button>
+    </section>
+    
+    <p>Vira:</p>
+    
+    <input type="date">
+    
+    <p><sub>Obs: o texto dentro de um type="date" dd/mm/yyyy (ou mm/dd/yyyy) significa day/month/year (dia/mês/ano).</sub></p>
+  </li>
+    
+  <li>
+    <p>"submit": significa "enviar" e simplesmente envia os valores inseridos no formulário para o lugar definido (vou falar disso mais à frente). Também aceita value="" para o texto dentro dele:</p>
+    
+    <section class='exemploCodigo'>
+      <div class='codigo'>
+        <code>
+          <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+          <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+          <span class="escondido">&lt;head&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+          <span class="escondido">&lt;/head&gt;</span>
+          <span class="escondido">&lt;body&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="submit" value="Enviar"&gt;
+          <span class="escondido">&lt;/body&gt;</span>
+          <span class="escondido">&lt;/html&gt;</span>
+        </code>
+      </div>
+
+      <button class='btn btnTestar' onclick="carregaEditor(7)">Testar</button>
+    </section>
+    
+    <p>Vira:</p>
+    
+    <input type="submit" value="Enviar">
+  </li>
+    
+  <li>
+    <p>"reset": apaga os valores colocados dentro dos campos dos formulários (o que foi inserido alí na hora, não altera o banco de dados). Também aceita value="" para o texto dentro dele:</p>
+    
+    <section class='exemploCodigo'>
+      <div class='codigo'>
+        <code>
+          <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+          <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+          <span class="escondido">&lt;head&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+          <span class="escondido">&lt;/head&gt;</span>
+          <span class="escondido">&lt;body&gt;</span>
+          <span class="escondido">&nbsp;&nbsp;</span>&lt;input type="reset" value="Apagar"&gt;
+          <span class="escondido">&lt;/body&gt;</span>
+          <span class="escondido">&lt;/html&gt;</span>
+        </code>
+      </div>
+  
+      <button class='btn btnTestar' onclick="carregaEditor(8)">Testar</button>
+    </section>
+
+    <p>Vira:</p>
+    
+    <input type="reset" value="Apagar">
+  </li>
+</ol>
+
+<p>Para saber todos os tipos que existem, é só pesquisar (para isso recomendo o site da Mozilla, criadora do Firefox; e da W3Schools), mas também é possível usar uma funcionalidade muito útil do VS Code (meu editor favorito e o que mais recomendo) apertando Ctrl + Espaço no teclado Windows ou command (⌘) + Espaço no teclado Mac dentro das aspas de type="". Isso faz aparecer uma janela pequena ao lado do texto com todas as opções disponíveis naquela linguagem. A mesma coisa funciona para qualquer lugar do código, não só para type="".</p>
+
+<h3>Action e Method</h3>
+
+<p>Esses dois atributos são bem simples e vão dentro da tag de abertura &lt;form&gt;:</p>
+
+<section class='exemploCodigo'>
+	<div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;form action="" method=""&gt; <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;/form&gt;
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(9)">Testar</button>
+</section>
+
+<p>action="" serve para indicar a ação que o &lt;input type="submit"&gt; fará quando enviar os dados. Mais especificamente para onde os dados serão enviados, como para um arquivo php:</p>
+
+<section class='exemploCodigo'>
+	<div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;form action="arquivo.php"&gt; <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;/form&gt;
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(10)">Testar</button>
+</section>
+
+<p>Já method="" diz qual método o arquivo utilizará para realizar o action. Existem dois valores possíveis: "get" e "post"; mas por enquanto vamos ficar só com "get" que pode ser traduzido como "pegar". Isso permite que o (exemplo) do arquivo PHP pegue os dados do formulário.</p>
+
+<p>Method e action não podem ser colocados sem o outro. A tag ficaria assim:</p>
+
+<section class='exemploCodigo'>
+	<div class='codigo'>
+      <code>
+        <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+        <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+        <span class="escondido">&lt;head&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+        <span class="escondido">&lt;/head&gt;</span>
+        <span class="escondido">&lt;body&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;</span>&lt;form action="arquivo.php" method="get"&gt; <br />
+        <span class="escondido">&nbsp;&nbsp;</span>&lt;/form&gt;
+        <span class="escondido">&lt;/body&gt;</span>
+        <span class="escondido">&lt;/html&gt;</span>
+      </code>
+    </div>
+
+    <button class='btn btnTestar' onclick="carregaEditor(11)">Testar</button>
+</section>

@@ -1,0 +1,37 @@
+/* variáveis globais */
+
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap');
+
+/* @font-face {
+	font-family: 'Montserrat';
+	src: url('./fontes/Montserrat/static/Montserrat-Bold.ttf') format('font/tff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('./fontes/Open_Sans/static/OpenSans/OpenSans-Regular.ttf') format('font/tff');
+} */
+
+:root{
+	/* tipografia */
+	--fonteTitulo: 'Montserrat', sans-serif;
+	--fonteTextoCorpo: 'Open Sans', sans-serif;
+	--tamanhoH1: 45px;
+	--tamanhoH2: 40px;
+	--tamanhoH3: 35px;
+	--tamanhoH4: 30px;
+	--tamanhoH5: 25px;
+	--tamanhoH6: 20px;
+	
+	/* cores */
+	--preto0: #141112;
+	--cinza0: #131111;
+	--cinza1: #4C5259;
+	--cinza2: #646C75;
+	--cinza3: #E3E4E8;
+	--branco0: #FAFAFF;
+
+	/* sombra */
+	--sombra: 0 10px 20px rgba(0, 0, 0, 0.253);
+}	

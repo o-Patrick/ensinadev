@@ -1,0 +1,59 @@
+<h2>Comentários</h2>
+
+<p>Os códigos não são feitos só do conteúdo que será realmente usado na execução do programa. Também é possível fazer anotações que só poderão ser vistas no código, não na página ou aplicativo em si. Isso é feito com símbolos específicos e mudam de linguagem para linguagem. No caso do HTML, comentários são feitos entre &lt;!-- e --&gt;. Por exemplo:</p>
+
+<section class='exemploCodigo'>
+	<div class='codigo'>
+      <code>
+        <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+        <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+        <span class="escondido">&lt;head&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+        <span class="escondido">&lt;/head&gt;</span>
+        <span class="escondido">&lt;body&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;</span>&lt;p&gt;Texto que aparece na página porque não está em um comentário&lt;/p&gt; <br />
+        <span class="escondido">&nbsp;&nbsp;</span>&lt;!-- Texto que NÃO aparece na página porque está em um comentário --&gt; <br />
+        <span class="escondido">&lt;/body&gt;</span>
+        <span class="escondido">&lt;/html&gt;</span>
+      </code>
+   </div>
+ 
+   <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>É claro que no caso de um comentário mais longo de várias linhas, seria difícil fazer a mesma coisa para todas. Portanto, é só utilizar os mesmos símbolos e apertar Enter como faria normalmente em um texto:</p>
+
+<section class='exemploCodigo'>
+	<div class='codigo'>
+      <code>
+        <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+        <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+        <span class="escondido">&lt;head&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+        <span class="escondido">&lt;/head&gt;</span>
+        <span class="escondido">&lt;body&gt;</span>
+        <span class="escondido">&nbsp;&nbsp;</span>&lt;p&gt;Texto que aparece na página porque não está em um comentário&lt;/p&gt; <br/>
+        <span class="escondido">&nbsp;&nbsp;</span>&lt;!-- <br/>
+        <span class="escondido">&nbsp;&nbsp;</span>Texto que NÃO aparece na página porque está em um comentário. <br/> <br />
+
+        <span class="escondido">&nbsp;&nbsp;</span>A diferença é que essa linha também não aparece por também estar dentro de um comentário. <br/> <br />
+
+        <span class="escondido">&nbsp;&nbsp;</span>Nem essa. <br/> <br />
+
+        <span class="escondido">&nbsp;&nbsp;</span>Essa aqui também não! <br/>
+        <span class="escondido">&nbsp;&nbsp;</span>--&gt; <br/>
+        <span class="escondido">&lt;/body&gt;</span>
+        <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(1)">Testar</button>
+</section>
+
+<p>O resultado dos dois códigos é esse:</p>
+
+<img src="../../assets/img/html/commentary-test-html.PNG" alt="Teste de comentário HTML" class="imgExplicacao" />
+
+<p>Essa mecânica é importante para documentar o que acontece no seu código, para que não esqueça de detalhes e também auxilia o entendimento de quem o pega depois de feito.</p>

@@ -1,0 +1,21 @@
+button:not(header button) {
+	display: block;
+	margin-left: auto;
+	margin-top: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	min-width: 100px;
+	min-height: 40px;
+	max-height: 50px;
+	background-color: var(--preto0);
+	color: var(--branco0);
+	border: 1px solid var(--preto0);
+	border-radius: 3px;
+	font-size: 20px;
+}
+
+button:not(header button):hover {
+	background-color: var(--branco0);
+	color: var(--preto0);
+	transition: 200ms;
+}

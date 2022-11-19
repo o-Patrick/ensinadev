@@ -1,0 +1,45 @@
+<h2>Básico</h2>
+<p>Antes de qualquer coisa, o que define um documento HTML é o tipo de arquivo. No caso de uma imagem, ela pode aparecer como .jpg ou .png, correto? Um PDF aparece como .pdf. Um documento HTML segue a mesma linha, tendo a extensão .html. Portanto, antes de fazer qualquer coisa, deve-se criar um arquivo novo e salvá-lo com (quase) o nome que quiser* com a extensão .html: nome.html</p>
+
+<sub>* Sempre se atentar a deixar tudo em letras minúsculas e sem espaços entre os caracteres para facilitar o desenvolvimento de qualquer código.</sub>
+
+<p>Agora começando pelo básico mesmo. HTML é uma linguagem de marcação. Isso significa que ela literalmente vai falar pro navegador (Chrome, Firefox etc) o que cada coisinha do site significa, se é um título, parágrafo, imagem etc. A estrutura básica do HTML5 é essa:</p>
+
+<p>Tudo entre &lt;&gt; são as tags que marcam pro programa o que cada coisa é. A maioria tem uma abertura (ex: &lt;body&gt;) só com o nome da tag e fechamento (ex: &lt;/body&gt;) indicada com uma barra antes do nome da tag. Porém nem todas são assim. Existe uma outra linguagem de marcação chamada XML (que não conheço), que por conta de compatibilidade de código, foi criado o XHTML, que basicamente é uma versão de HTML com umas regras a mais. Fui pesquisar e pelo jeito o HTML5 permitiu que a web funcionasse muito melhor, não precisando mais tanto do XHTML, então não vale a pena explicar muito. Falei isso tudo pra explicar sobre as tags sem fechamento. O tipo que a gente viu até agora tem a abertura (ex: &lt;body&gt;) e o fechamento (ex: &lt;/body&gt;), mas algumas, como a tag para imagem, não tem o fechamento, então ela só fica como &lt;img&gt;. Em HTML5 ela fica do jeito que mostrei agora, mas no caso de XHTML, esse tipo de tag tem uma barra no final dela própria: &lt;img/&gt;. Então se ver essa barra, é porque o código seguiu essa regra XHTML. Mas como eu já disse, a gente vai focar no HTML5, então sem essa barra no final. (Ela só continua no caso de existirem tanto a abertura quanto o fechamento, não pode esquecer).</p>
+
+<section class='exemploCodigo'>
+	<div class='codigo'>
+		<code id='codigo'>
+		&lt;!DOCTYPE html&gt; <br />
+		&lt;html lang='pt-br'&gt; <br />
+		&lt;head&gt; <br />
+		&nbsp;&nbsp;&lt;meta charset='UTF-8'&gt; <br />
+		&nbsp;&nbsp;&lt;meta name='viewport' content='width=device-width, initial-scale=1.0'&gt; <br />
+		&nbsp;&nbsp;&lt;title&gt;Nome do documento&lt;/title&gt; <br />
+		&lt;/head&gt; <br />
+		&lt;body&gt; <br />
+		&lt;/body&gt; <br />
+		&lt;/html&gt; <br />
+		</code>
+	</div>
+
+	<!-- <a href='./../../assets/online-ide-master/ui/ide.html' class='btnItem'> -->
+		<button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+	<!-- </a> -->
+</section> <!-- exemploCodigo -->
+
+<p>Agora, explicando a estrutura básica antes do último parágrafo:</p>
+
+<p>&lt;!DOCTYPE html&gt; fala pro navegador que o tipo (type) do documento (doc) é HTML. Isso ajuda o navegador a funcionar direito.</p>
+
+<p>&lt;html&gt;&lt;/html&gt; indica que tudo entre a abertura &lt;html&gt; e o fechamento &lt;/html&gt; está dentro da parte HTML do código, então tudo que envolva HTML a gente coloca lá. É a parte mais essencial de um código HTML. O lang="" dentro de &lt;html&gt; serve para indicar o idioma de um documento, que neste caso é "pt-br" (que precisa ser digitado assim, existe um padrão).</p>
+
+<p>Então já dentro do HTML, a gente tem as tags &lt;head&gt;&lt;/head&gt; que indicam o cabeçalho da página. Esse cabeçalho não é visível no site, ele é a parte de configurações do documento.</p>
+
+<p>Dentro da tag &lt;head&gt;&lt;/head&gt;, as duas primeiras linhas têm a tag &lt;meta&gt; que é simplesmente um tipo de configuração. Na primeira, charset="" indica o conjunto de caracteres que o idioma do documento utiliza. Isso é importante para mostrar acentos que o português usa, mas o inglês não, por exemplo. A segunda está basicamente dizendo ao navegador que a visualização da página deve estar adaptada à largura da tela do dispositivo. Isso é simplesmente para o site funcionar melhor em telas de tamanhos diferentes.</p>
+
+<p>Uma das configurações é a tag &lt;title&gt;&lt;/title&gt; que indica qual é o título daquele documento, e é o que aparece alí na aba no navegador (lembrando que essa tag fica sempre dentro de &lt;head&gt;&lt;/head&gt;).</p>
+
+<p>Logo depois do cabeçalho vem a tag &lt;body&gt;&lt;/body&gt; que indica o corpo do HTML, então essa sim é visível. É dentro dela que a gente coloca tudo o que queremos que as pessoas vejam no site: títulos, parágrafos, imagens, vídeos, áudios e tudo mais.</p>
+
+<p>Lembrando também que as tags só servem para falar ao navegador o que cada coisa daquelas é (por isso linguagem de marcação), isso também vai ajudar muito no CSS.</p>

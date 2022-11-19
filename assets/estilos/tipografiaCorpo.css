@@ -1,0 +1,47 @@
+.titulo{
+	font-weight: 600;
+	font-family: var(--fonteTitulo);
+	color: var(--preto0);
+}
+
+.titulo1 {
+	font-size: 45px;
+}
+
+.titulo2 {
+	font-size: 40px;
+}
+
+.titulo3 {
+	font-size: 35px;
+}
+
+.titulo4 {
+	font-size: 30px;
+}
+
+.titulo5 {
+	font-size: 25px;
+}
+
+.titulo6 {
+	font-size: 20px;
+}
+
+.textoCorpo {
+	font: 20px 'Open Sans', sans-serif;
+}
+
+.corParagrafo {
+	color: var(--cinza0);
+}
+
+.link {
+	color: var(--cinza1);
+	text-decoration: none;
+}
+
+.link:hover {
+	color: var(--preto0);
+	text-decoration: underline;
+}

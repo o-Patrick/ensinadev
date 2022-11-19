@@ -1,0 +1,244 @@
+<h2>Onde fica o CSS</h2>
+
+<p>Existem três formas de aplicar o CSS no seu HTML: inline, interno e externo.</p>
+
+<h3>Inline</h3>
+
+<p>É o tipo mais simples e específico. Usando os exemplos que já passei, ficaria assim:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>h1 { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;font-size: 15pt; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>} <br />
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>Vira:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;h1 style="font-size: 15pt;"&gt;Título&lt;/h1&gt;
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(1)">Testar</button>
+</section>
+
+<hr>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>p { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;color: red; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>} <br />
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(2)">Testar</button>
+</section>
+
+<p>Vira:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;p style="color: red;"&gt;Texto&lt;/p&gt;
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(3)">Testar</button>
+</section>
+
+<hr>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>img { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;width: 300px;</span> <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>} <br />
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(4)">Testar</button>
+</section>
+
+<p>Vira:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;img style="width: 300px;"&gt;
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(5)">Testar</button>
+</section>
+
+<h3>Interno</h3>
+
+<p>Já é bem parecido com a forma como mostrei primeiro, porém precisando colocar os seletores dentro da tag &lt;style&gt;&lt;/style&gt;, esta indo dentro de &lt;head&gt;&lt;/head&gt;:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      &lt;head&gt; <br />
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      &nbsp;&nbsp;&lt;style&gt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;h1 { <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 15pt; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;} <br /> <br />
+
+      &nbsp;&nbsp;&nbsp;&nbsp;p { <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: red; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;} <br /> <br />
+
+      &nbsp;&nbsp;&nbsp;&nbsp;img { <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 300px; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+      &nbsp;&nbsp;&lt;/style&gt; <br />
+      &lt;/head&gt;
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(6)">Testar</button>
+</section>
+
+<p>Tranquilo também, né?</p>
+
+<h3>Externo</h3>
+
+<p>Para este é preciso criar um novo documento, mas ao invés de ter a extensão .html, precisa ser .css (ex: nomeDoc.css). A regra aqui é a mesma para um nome de arquivo .html, assim como para basicamente todo tipo de arquivo que um dia você tocar durante o desenvolvimento de algo.</p>
+
+<p>Com o arquivo criado e salvo, segue a mesma forma que o CSS interno, porém sem a tag &lt;style&gt;&lt;/style&gt; já que o documento em si é CSS:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>h1 { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;font-size: 15pt; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>} <br /> <br />
+
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>p { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;color: red; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>} <br /> <br />
+
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>img { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;width: 300px; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(7)">Testar</button>
+</section>
+
+<p>Mas claramente o .html não vai saber magicamente onde está o .css, por isso é necessário indicar o caminho (o que acontece em apenas uma linha que também vai no &lt;head&gt;&lt;/head&gt;):</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;link rel="stylesheet" href="nome.css"&gt;
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(8)">Testar</button>
+</section>
+
+<p>"Link" já é um nome autoexplicativo para uma tag. O atributo rel="" indica a relação do conteúdo do link com o documento atual; neste caso é uma relação de folha de estilo. E href="" funciona exatamente da mesma forma que o src="" de &lt;img&gt;, é só indicar o caminho.</p>
+
+<p>Prontinho. Mas a dúvida que deve ter surgido é: qual usar? Sempre dê preferência ao externo, ele deixa seu código muito mais organizado e profissional, com cada linguagem tendo seu próprio espaço. Além disso, ele pode ser aplicado em vários documentos ao mesmo tempo, enquanto as outras dependem de um único documento; então precisaria fazer a mesma coisa em todas as páginas, o que nem preciso dizer o quanto é horroroso.</p>
+
+<p>Porém não é crime usar o interno, contanto que sejam poucas declarações ou até mesmo um exercício pequeno no qual quer testar alguma coisa. Já o inline é o caso mais específico de todos, porque ele não está sendo aplicado somente dentro daquele documento, mas também dentro de um único elemento, então se quiser vários parágrafos com aquele estilo, é necessário fazer a mesma coisa para todos. Pois é...</p>

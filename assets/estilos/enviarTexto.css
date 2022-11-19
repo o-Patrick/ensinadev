@@ -1,0 +1,31 @@
+.containerEnviarTexto {
+	min-width: 300px;
+	max-width: 800px;
+	margin: auto;
+	margin-top: 0;
+	padding: 20px 30px;
+	box-shadow: var(--sombra);
+	background-color: var(--branco0);
+	display: flex;
+	border-radius: 5px;
+}
+
+.frmEnviarTexto {
+	display: flex;
+	width: 100%;
+}
+
+.campoTexto {
+	width: 80%;
+	height: 10em;
+	background-color: var(--branco0);
+	color: var(--preto0);
+	font-size: 18px;
+	border: 1px solid var(--cinza1);
+	border-radius: 3px;
+	padding: 10px 20px;
+}
+
+.campoTexto::placeholder {
+	color: var(--preto0);
+}

@@ -1,0 +1,21 @@
+.barraProgresso, .barraProgressoAtual {
+  min-height: 10px;
+  border-radius: 3px;
+}
+
+.barraProgresso {
+  width: 300px;
+  background-color: var(--cinza3);
+	border: 1px solid var(--cinza2);
+}
+
+.barraProgressoAtual {
+  background-color: blue;
+}
+
+.temaProgresso {
+	margin: 0 0 0 auto;
+	padding: 20px;
+	min-width: 300px;
+	width: 30%;
+}

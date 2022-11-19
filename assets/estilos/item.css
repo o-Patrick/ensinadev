@@ -1,0 +1,64 @@
+.conteudoItem {
+	min-width: 300px;
+	max-width: 800px;
+	margin: 40px auto;
+	padding: 10px 40px;
+	background-color: var(--branco0);
+	border-radius: 5px;
+	box-shadow: var(--sombra);
+}
+
+.exemploCodigo {
+	display: flex;
+	background-color: var(--cinza3);
+	margin: 20px auto;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+.codigo {
+	display: inline-block;
+	background-color: var(--branco0);
+	padding: 5px 10px;
+	width: 85%;
+	border-radius: 5px;
+}
+
+.exemploCodigo a, .containerEnviarComentario a{
+	margin: auto 0 auto auto;
+}
+
+.btn {
+	align-items: center;
+	padding-right: 10px;
+	padding-left: 10px;
+	min-height: 40px;
+	background-color: var(--preto0);
+	color: var(--branco0);
+	border: 1px solid var(--preto0);
+	border-radius: 3px;
+	font-size: 20px;
+}
+
+.btn:hover {
+	background-color: var(--branco0);
+	color: var(--preto0);
+	transition: 200ms;
+}
+
+.btnLido {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.conteudoItem p {
+	margin: 1.5em auto;
+}
+
+.escondido {
+	display: none;
+}
+
+.imgExplicacao {
+	border: 1px solid var(--preto0);
+}

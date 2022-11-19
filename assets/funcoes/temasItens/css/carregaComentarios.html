@@ -1,0 +1,85 @@
+<h2>Comentários</h2>
+
+<p>Os códigos não são feitos só do conteúdo que será realmente usado na execução do programa. Também é possível fazer anotações que só poderão ser vistas no código, não na página ou aplicativo em si. Isso é feito com símbolos específicos e mudam de linguagem para linguagem. No caso de CSS, comentários são feitos entre /* e */. Por exemplo:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>/* Texto que NÃO é considerado no estilo da página porque está em um comentário */
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>É claro que no caso de um comentário mais longo de várias linhas, seria difícil fazer a mesma coisa para todas. Portanto, é só utilizar os mesmos símbolos e apertar Enter como faria normalmente em um texto:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>/* <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Texto que NÃO é considerado no estilo da página porque está em um comentário. <br /> <br />
+
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;A diferença é que essa linha também não aparece por também estar dentro de um comentário. <br /> <br />
+
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Nem essa. <br /> <br />
+
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;Essa aqui também não! <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>*/
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(1)">Testar</button>
+</section>
+
+<p>Ou seja, posso ter o seguinte código...:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>body { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;background-color: yellow; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;/* color: white; */ <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(2)">Testar</button>
+</section>
+
+<p>... E a página não aplicará ao texto a cor branca, porque a propriedade está comentada:</p>
+
+<img src="../../assets/img/css/commentary-test-css.PNG" alt="Teste de comentário CSS" class="imgExplicacao" />

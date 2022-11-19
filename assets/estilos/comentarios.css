@@ -1,0 +1,67 @@
+.containerComentarios {
+	min-width: 300px;
+	max-width: 800px;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 20px 30px;
+	background-color: var(--branco0);
+	box-shadow: var(--sombra);
+	border-radius: 3px;
+}
+
+.containerResponder form {
+	width: 100%;
+	display: flex;
+	align-content: space-between;
+}
+
+.containerResponder button {
+	margin-left: 10%;
+}
+
+.containerResponder .campoComentario {
+	width: 80%;
+}
+
+.comentario {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	vertical-align: middle;
+	margin: auto;
+	margin-bottom: 40px;
+	padding: 20px 30px;
+	border-radius: 5px;
+	box-shadow: var(--sombra);
+}
+
+.comentario .usuario {
+	margin-right: 10px;
+}
+
+.comentario p {
+	margin-left: 10px;
+}
+
+.comentario div {
+	display: flex;
+}
+
+.responderComentario {
+  margin-left: auto; 
+	font-size: .75em;
+}
+
+.responderComentario:hover {
+	color: var(--cinza2);
+	transition: 150ms linear;
+}
+
+.original {
+	background-color: var(--cinza2);
+	border-radius: 2px;
+	color: var(--cinza3);
+	font-size: .7em;
+	margin-bottom: 0;
+	padding: 1px 10px;
+}

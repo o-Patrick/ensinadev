@@ -1,0 +1,26 @@
+.botoesItem {
+	display: block;
+	margin: 0px auto;
+}
+
+.btnItem {
+	display: flex;
+	align-items: center;
+	background-color: var(--preto0);
+	color: var(--branco0);
+	width: 500px;
+	min-height: 60px;
+	border: 1px solid var(--preto0);
+	border-radius: 3px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.514);
+}
+
+.btnItem:hover {
+	background-color: var(--branco0);
+	color: var(--preto0);
+	transition: 250ms;
+}
+
+.btnItem label {
+	margin: auto;
+}

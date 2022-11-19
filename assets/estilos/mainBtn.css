@@ -1,0 +1,48 @@
+.botoesCentrais {
+	display: block;
+	margin: 40px auto;
+}
+
+.linha{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+	.linha {
+		max-width: 700px;
+	}
+
+	.linha .btnMargem {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+.btnMargem {
+	margin: 20px 30px;
+}
+
+.mainBtn {
+	display: flex;
+	align-items: center;
+	background-color: var(--preto0);
+	color: var(--branco0);
+	width: 500px;
+	height: 100px;
+	border: 1px solid var(--preto0);
+	border-radius: 3px;
+	box-shadow: var(--sombra);
+}
+
+.mainBtn:hover, .btn:hover {
+	background-color: var(--branco0);
+	color: var(--preto0);
+	transition: 250ms;
+	cursor: pointer;
+}
+
+.mainBtn label {
+	margin: auto;
+}

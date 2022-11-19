@@ -1,0 +1,537 @@
+<h2>Funções</h2>
+
+<p>Normalmente é necessário fazer um código em que algumas linhas serão repetidas várias vezes (o que significa que essas linhas são iguais). Para que não seja necessário ficar copiando e colando ou muito menos digitando tudo novamente, podemos usar Funções.</p>
+
+<p>Mas o que são Funções? Elas são pedaços de código que ficam em um lugar específico, mas que podem ser chamadas quantas vezes e em quantos lugares precisar. Quando a chamada é feita, não é necessário digitar tudo de novo porque é como se todas aquelas linhas fossem transportadas só pela chamada. Vamos à prática com a estrutura básica de uma função em PHP:</p>
+
+<hr>
+function nome (parâmetros) { <br />
+  // Aqui dentro é onde vão todas as linhas que precisariamos repetir <br />
+} <br />
+<hr>
+
+<p><sub>Obs: lembrando que // em PHP indica comentário!</sub></p>
+
+<ol>
+  <li>
+    <p>A palavra function é obrigatória e fixa. É ela que indica que será criada uma função alí.</p>
+  </li>
+  <li>
+    <p>Onde está escrito nome é onde se coloca o nome da função, que pode ser qual nós quisermos (contanto que não tenha espaços, por exemplo: nomeDaFuncao é válido, enquanto nome da funcao não é). Também existem funções anônimas (sem um nome), mas isso só é usado em casos únicos e não serão necessárias por enquanto.</p>
+  </li>
+  <li>
+    <p>Os parênteses logo depois do nome são obrigatórios e servem para indicar se tem parâmetros ou não. Os parâmetros em si não são obrigatórios e vamos falar mais para frente.</p>
+  </li>
+  <li>
+    <p>Logo depois dos parênteses vêm { e } (as chaves) e dentro delas é colocado todo o código que se quer repetir.</p>
+  </li>
+  
+  <li>
+    <p>A chamada é feita só repetindo o nome da função (que deve estar exatamente igual) seguido dos parênteses (com ou sem os parâmetros):</p>
+  </li>
+</ol>
+
+<hr>
+nome(parâmetros); <br /> <br />
+
+function nome (parâmetros) { <br />
+  // Aqui dentro é onde vão todas as linhas que precisariamos repetir <br />
+} <br />
+<hr>
+
+<p>Agora vamos fazer uma analogia. Imagine que você trabalha em uma empresa e que todas as pessoas que trabalham alí precisem de um cartão próprio para entrar no prédio. O cartão de todo mundo funciona de forma parecida. Ele é eletrônico e quando aproximado da catraca, é lido e a pessoa é autorizada a entrar. Para que existisse algum tipo de controle de entradas caso não existisse o cartão, seria preciso fazer um registro para cada uma das pessoas todas as vezes que entrassem no edifício, o que não é nada prático e só atrapalharia todo mundo. Mas para que não seja necessária essa repetição, o cartão foi feito de uma forma igual para todo mundo e a autenticação é feita de uma forma simples (o próprio cartão).</p>
+
+<p>Aplicando isso à ideia de uma função:</p>
+
+<hr>
+function autenticacao(){ <br />
+  // Quando for aproximado da catraca, a passagem é liberada; <br />
+} <br />
+<hr>
+
+<p>O processo de autenticação (a utilidade do cartão) é um processo repetido por todas as pessoas que entram no prédio. Para não precisar ser criado um novo registro todas as vezes, os cartões tem a function autenticacao() dentro de si.</p>
+
+<p>Mas como sabemos, não basta só o cartão ter a função dentro dele, as pessoas também precisam encostá-lo na catraca, ou seja, fazer a chamada da função junto à catraca. A representação em código da chamada seria essa:</p>
+
+<hr>
+<p>autenticacao();</p>
+<hr>
+
+<p>E é exatamente por meio da chamada que todo o processo da function autenticacao() é repetido sem precisar repetir as linhas dentro dela todas as vezes.</p>
+
+<p>A mesma coisa é um código. Se precisamos autenticar um usuário no login, não faria sentido repetir as linhas que fazem isso a cada usuário, é só fazer a chamada da função que o processo (ou rotina) é "transportado" e cada usuário entra de forma simples.</p>
+
+<h3>Return</h3>
+
+<p>Quando usamos uma função é porque queremos algum tipo de resultado sem precisar repetir a mesma parte de código, porém as funções não conseguem saber exatamente qual o valor desse resultado; ainda mais pensando que não existe limite para usar dados dentro de uma função e, mesmo que só exista um, é necessário deixar claro o que deve ser retornado. É exatamente essa a função do return. Como o nome diz, ele serve para retornar algo. Mas o quê? Como já dito, uma variável ou um simples valor. Ainda no caso do cartão de autenticação, fazemos isso (só adicionando um IF/ELSE):</p>
+function autenticacao(){
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>$pessoa = "registrada";<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>function autenticacao($pessoa) {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;if ($pessoa == "registrada") {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$liberada = true;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;} else { <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;$liberada = false;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;}<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;return $liberada;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>echo autenticacao($pessoa);<br />
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>Nesse exemplo foi declarada a variável $liberada para confirmar se a pessoa poderá entrar ou não. Portanto se a pessoa estiver registrada no sistema, $liberada recebe o valor true (verdadeiro) e ela pode entrar; se não estiver registrada, a variável recebe o valor false, o que impede a entrada. Mas como já disse, por mais que só tenha uma variável, a função não sabe sozinha o que fazer, por isso é usado o comando return $liberada para deixar claro que será retornado o valor dentro da variável $liberada, seja ele true ou false.</p>
+
+<p>Também poderia ser um valor sem uma variável (por exemplo: só dizer return true ou return false):</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>$pessoa = "registrada"; <br />  <br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>function autenticacao($pessoa) { <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;if ($pessoa == "registrada"){ <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return true; <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;} else { <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return false; <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;} <br />
+      <span class="escondido">&nbsp;&nbsp;</span>} <br /> <br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>echo autenticacao($pessoa); <br />
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(1)">Testar</button>
+</section>
+
+<p>No entanto, recomendo utilizar a forma anterior, já que é mais prático alterar o valor de uma variável várias vezes pelo código e no final só seria um return, não repetindo o mesmo comando sem necessidade e deixando o return em um único lugar.</p>
+
+<p>Outro porém é que return não deve ser usado de qualquer jeito, já que a função é parada quando o código chega nele:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>$pessoa = "registrada";<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>function autenticacao($pessoa) {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;if ($pessoa == "registrada") {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return true;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;} else { <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;return false;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;}<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;echo "Fim da função";<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>echo autenticacao($pessoa);<br />
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(2)">Testar</button>
+</section>
+
+<p>O funcionamento dessa função parece claro: passando pelo IF/ELSE, o código verifica se a pessoa está registrada ou não, o resultado é retornado e, por fim, é escrita na tela a frase Fim da função! utilizando um echo. Correto? É óbvio que se estivesse eu não teria perguntado, né... A verificação com IF/ELSE ocorre normalmente, como já vimos anteriormente. Porém o echo "Fim da função!" simplesmente não acontecesse, porque ou a pessoa está registrada e é retornado true e ela passa, ou ela não está registrada e é retornado false. Independente da ocorrência, o return sempre é usado antes do echo, e como return encerra a função, tudo o que estiver depois dele na rotina é simplesmente ignorado. Por isso tenha cuidado na hora de retornar!</p>
+
+<h3>Parâmetros</h3>
+
+<p>Imagine uma pessoa que vai a uma loja de roupas comprar um terno. Existem peças com as medidas já prontas, porém pode ser preferível que seja feito outro conjunto sob medida, já que as pessoas possuem corpos diferentes. Para fazer esse conjunto, o alfaiate precisa pegar as medidas do corpo da cliente usando uma fita métrica. Com ela, o alfaiate consegue as medidas dos braços, torço, ombros, cintura e das outras partes do corpo, ou seja, ele pega todos os parâmetros necessários para fazer o terno novo. Parâmetros são isso: valores (nesse caso as medidas do corpo) que serão usados como base para outra coisa (o terno novo). Tranformando isso em uma função com parâmetros (que vão dentro dos parênteses no início da declaração de função e separados por vírgula):</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>function costura ($bra, $tor, $tor, $cin) {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;// código<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}<br />
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(3)">Testar</button>
+</section>
+
+<p>Não sei o limite de parâmetros que uma função pode receber em PHP, mas não é necessário se preocupar com isso; pode não haver nenhum ou até mesmo muitos parâmetros ao mesmo tempo.</p>
+
+<p>Assim como sem o return a função não sabe sozinha o que mandar de volta, ela também não sabe magicamente a que se referem esses parâmetros. Para isso, as variáveis que queremos passar vão dentro da chamada:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>// variáveis<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$bracos = 1;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$torco = 0.7;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$ombros = 0.5;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$cintura = 0.4;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// chamada<br />
+      <span class="escondido">&nbsp;&nbsp;</span>echo costura($bracos, $torço, $ombros, $cintura);<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// função<br />
+      <span class="escondido">&nbsp;&nbsp;</span>function costura ($bra, $tor, $omb, $cin) {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;$ternoNovo = $bra + $tor + $omb + $cin;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;return $ternoNovo;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(4)">Testar</button>
+</section>
+
+<p>Os parâmetros não vêm do nada, eles recebem variáveis que guardam um valor que você quer usar dentro da função. Essa passagem é feita na ordem, então meu primeiro parâmetro em costura($bracos, $torço, $ombros, $cintura), sempre corresponde ao primeiro em function costura ($bra, $tor, $omb, $cin), assim como o segundo na chamada corresponde ao segundo na declaração de função e assim por diante. Sei como é confuso isso de passagem de valor entre variáveis e parâmetros e talvez essa imagem ajude:</p>
+
+<p>Repare que usei o nome inteiro nas variáveis (ex: $bracos), enquanto os parâmetros que recebem aquele valor tem uma versão encurtada, isso porque eles não podem ter o mesmo nome. Então se declarei um parâmetro $media, não posso ter outro na mesma função chamado $media; ou se declarei uma variável $media, não posso ter um parâmetro $media (pode até funcionar em certos casos, mas é bom não causar confusão para quem vai ler o código depois). Também não é obrigatório ser o nome encurtado, pode ser o que quiser, só é importante fazer sentido.</p>
+
+<h3>Escopo de parâmetros</h3>
+
+<p>Outro detalhe importante é que os parâmetros só funcionam dentro da função à qual eles fazem parte, que recebem um valor passado na chamada. Então quando é declarado:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>$bracos = 1;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$torco = 0.7;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>function costura($bra, $tor) {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;echo "$bra $tor";<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}<br /><br/>
+
+      <span class="escondido">&nbsp;&nbsp;</span>costura($bracos, $torco);
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(5)">Testar</button>
+</section>
+
+<p>Os parâmetros $bra e $tor só funcionam dentro da função costura(). Se for declarada outra:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>$bracos = 1;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$torco = 0.7;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;function costura($bra, $tor) {<br /></span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;echo "$bra $tor";<br /></span>
+      <span class="escondido">&nbsp;&nbsp;}<br /><br/></span>
+
+      <span class="escondido">&nbsp;&nbsp;costura($bracos, $torco);<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;// entrega mostra mensagens de erro porque as variáveis não estão definidas dentro da função<br /></span>
+      <span class="escondido">&nbsp;&nbsp;</span>function entrega() {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;echo "$bra $tor";<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}<br /><br/>
+
+      <span class="escondido">&nbsp;&nbsp;</span>entrega();
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(6)">Testar</button>
+</section>
+
+<p>Não será possível usar $bra e $tor novamente porque o escopo (alcance) dos parâmetros é só aquela função, então parâmetros possuem escopo local ou escopo de bloco (diferente de escopo global, que funciona no código todo).</p>
+
+<p>Isso garante que a memória do computador não seja ocupada sem necessidade e o código fica mais organizado, já que $bra e $tor funcionam somente dentro de costura(), significando que eles não existem no resto do código e ainda podem ser "redeclarados" para outras funções tipo entrega(), sem dar erro por usar o mesmo nome:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;$bracos = 1;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$torco = 0.7;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;</span>function costura($bra, $tor) {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;// código<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;costura($bracos, $torco);<br /><br /></span>
+
+
+      <span class="escondido">&nbsp;&nbsp;</span>function entrega($bra, $tor) {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;// código<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}<br /><span class="escondido"><br/></span>
+
+      <span class="escondido">&nbsp;&nbsp;entrega($bracos, $torco);</span>
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(7)">Testar</button>
+</section>
+
+<p>Só não pode esquecer de enviar os parâmetros na chamada de entrega() também:</p>
+
+<hr>
+<p>entrega($bracos, $torco);</p>
+<hr>
+
+<p>Vamos a um exemplo mais completo com o que vimos:</p>
+
+<p>1. Temos três alunos e cada um tem duas notas da escola:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 1<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota1 = 10;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota2 = 8;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 2<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota3 = 8;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota4 = 8;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 3<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota5 = 5;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota6 = 9;<br />
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(8)">Testar</button>
+</section>
+
+<p>2. É preciso fazer o cálculo da média de todos esses alunos. Uma forma de fazer isso é:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;// aluno 1<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota1 = 10;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota2 = 8;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;// aluno 2<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota3 = 8;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota4 = 8;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;// aluno 3<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota5 = 5;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota6 = 9;<br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;</span>$media1 = ($nota1 + $nota2) / 2;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$media2 = ($nota3 + $nota4) / 2;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$media3 = ($nota5 + $nota6) / 2;
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(9)">Testar</button>
+</section>
+
+<p>3. Para mostrar isso:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;// aluno 1<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota1 = 10;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota2 = 8;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;// aluno 2<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota3 = 8;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota4 = 8;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;// aluno 3<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota5 = 5;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota6 = 9;<br /></span>
+
+
+      <span class="escondido">&nbsp;&nbsp;$media1 = ($nota1 + $nota2) / 2;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$media2 = ($nota3 + $nota4) / 2;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$media3 = ($nota5 + $nota6) / 2;</span>
+
+
+      <span class="escondido">&nbsp;&nbsp;</span>echo "Média aluno 1:" . $media1;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>echo "Média aluno 2:" . $media2;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>echo "Média aluno 3:" . $media3;<br />
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(10)">Testar</button>
+</section>
+
+<p>Mas isso não é nada prático e cria variáveis sem necessidade (o que enche a memória do computador). Uma forma mais profissional de fazer a mesma coisa é com uma função:</p>
+
+<p>1. Vamos manter as variáveis:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 1<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota1 = 10;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota2 = 8;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 2<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota3 = 8;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota4 = 8;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 3<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota5 = 5;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota6 = 9;<br />
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(11)">Testar</button>
+</section>
+
+<p>2. E no lugar de criar uma variável para cada média, é possível criar apenas uma função que recebe as notas de cada aluno, faz o cálculo e retorna o valor:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;// aluno 1<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota1 = 10;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota2 = 8;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;// aluno 2<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota3 = 8;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota4 = 8;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;// aluno 3<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota5 = 5;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota6 = 9;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;</span>function media($n1, $n2) {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;return ($n1 + $n2) / 2;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(12)">Testar</button>
+</section>
+
+<p>3. E para mostrar, basta chamar a função e passar os parâmetros no lugar das variáveis de média:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;// aluno 1<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota1 = 10;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota2 = 8;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;// aluno 2<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota3 = 8;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota4 = 8;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;// aluno 3<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota5 = 5;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;$nota6 = 9;<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;function media($n1, $n2) {<br /></span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;return ($n1 + $n2) / 2;<br /></span>
+      <span class="escondido">&nbsp;&nbsp;}<br /><br /></span>
+
+      <span class="escondido">&nbsp;&nbsp;</span>echo "Média aluno 1:" . media($nota1, $nota2);<br />
+      <span class="escondido">&nbsp;&nbsp;</span>echo "Média aluno 2:" . media($nota3, $nota4);<br />
+      <span class="escondido">&nbsp;&nbsp;</span>echo "Média aluno 3:" . media($nota5, $nota6);<br />
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(13)">Testar</button>
+</section>
+
+<p>4. Comparando os códigos:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>// pior<br />
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 1<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota1 = 10;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota2 = 8;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 2<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota3 = 8;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota4 = 8;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 3<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota5 = 5;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota6 = 9;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>$media1 = ($nota1 + $nota2) / 2;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$media2 = ($nota3 + $nota4) / 2;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$media3 = ($nota5 + $nota6) / 2;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span></span>echo "Média aluno 1:" . $media1;<br />
+      <span class="escondido">&nbsp;&nbsp;</span></span>echo "Média aluno 2:" . $media2;<br />
+      <span class="escondido">&nbsp;&nbsp;</span></span>echo "Média aluno 3:" . $media3;<br /><br /><br />
+
+
+      <span class="escondido">&nbsp;&nbsp;</span>// melhor<br/>
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 1<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota1 = 10;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota2 = 8;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 2<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota3 = 8;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota4 = 8;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>// aluno 3<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota5 = 5;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>$nota6 = 9;<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>function media($n1, $n2) {<br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;return ($n1 + $n2) / 2;<br />
+      <span class="escondido">&nbsp;&nbsp;</span>}<br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>echo "Média aluno 1:" . media($nota1, $nota2);<br />
+      <span class="escondido">&nbsp;&nbsp;</span>echo "Média aluno 2:" . media($nota3, $nota4);<br />
+      <span class="escondido">&nbsp;&nbsp;</span>echo "Média aluno 3:" . media($nota5, $nota6);<br />
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(14)">Testar</button>
+</section>
+
+<p>Uma função também pode ser declarada como valor de uma variável por meio da chamada:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;?php</span>
+      <span class="escondido">&nbsp;&nbsp;</span>$num1 = 5;<br/>
+      <span class="escondido">&nbsp;&nbsp;</span>$num2 = 7;<br/><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>$resultado = soma($num1, $num2);<br/><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>function soma ($n1, $n2) {<br/>
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;return $n1 + $n2;<br/>
+      <span class="escondido">&nbsp;&nbsp;</span>}<br/>
+      <span class="escondido">?&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(15)">Testar</button>
+</section>
+
+<p>Fazendo isso, a variável $resultado pode ser usada no lugar da chamada, o que facilita, já que não é necessário digitar os parâmetros novamente em outros lugares do código.</p>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Codeboard Online IDE</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <div class="header"> Codeboard Online IDE </div>
+    <div class="control-panel">
+        Select Language:
+        &nbsp; &nbsp;
+        <select id="languages" class="languages" onchange="changeLanguage()">
+            <option value="html"> HTML e CSS </option>
+            <option value="php"> PHP </option>
+            <option value="node"> JavaScript </option>
+        </select>
+    </div>
+
+    <div class="button-container">
+        <button class="btn" onclick="executeCode()"> Run </button>
+    </div>
+    
+    <div class="containerIde">
+        <div class="esquerda" id="esquerda">
+            <div class="editor" id="editor"></div>
+        </div>
+        <div class="direita" id="direita">
+            <div class="output" id="output"></div>
+            <!-- <iframe src="" frameborder="0" class="output"></iframe> -->
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/lib/ace.js"></script>
+    <script src="js/lib/theme-monokai.js"></script>
+    <script src="js/ide.js"></script>
+    <script>
+        if (sessionStorage.getItem('codigoExemplo') !== null) {
+            // pega o código
+            const  codigo = sessionStorage.getItem('codigoExemplo');
+
+            // separa o código em um vetor
+            let vetorAux = codigo;
+            vetorAux = vetorAux.split('\n');
+
+            // remove os dois primeiros e dois últimos itens do vetor
+            vetorAux.shift(vetorAux[0])
+            vetorAux.shift(vetorAux[0])
+            vetorAux.pop(vetorAux[Number(vetorAux.length)-1])
+            vetorAux.pop(vetorAux[Number(vetorAux.length)-1])
+
+            // passa o vetor para continuar formatação
+            let codTratado = vetorAux;
+
+            // seleciona editor para inserir código
+            let editor = ace.edit("editor");
+            editor.setTheme("ace/theme/monokai");
+            editor.getSession().setMode("ace/mode/javascript");
+            let posicao = {
+                    row: 0,
+                    column: 0
+                };
+
+            // termina de formatar o código e insere no editor
+            for (let i = 0; i < codTratado.length; i++) {
+                // tira os espaços antes, troca &nbsp;, <br>, < e >
+                codTratado[i] = codTratado[i].trim();
+                codTratado[i] = codTratado[i].replace(/&nbsp;/g, ' ');
+                codTratado[i] = codTratado[i].replace(/\<br\>/g, '');
+                codTratado[i] = codTratado[i].replace(/&lt;/g, '<');
+                codTratado[i] = codTratado[i].replace(/&gt;/g, '>');
+                codTratado[i] = codTratado[i].replace(/\<span class="escondido"\>|\<\/span\>/g, '');
+
+                posicao.row = i;
+                editor.session.insert(posicao, codTratado[i] + '\n');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

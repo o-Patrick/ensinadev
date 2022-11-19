@@ -1,0 +1,37 @@
+.linkMenuPerfil {
+  text-decoration: none;
+  color: var(--preto0);
+}
+
+.itemMenuPerfil {
+  padding: 20px;
+  font-size: 20px;
+  width: 150px;
+  text-align: center;
+}
+
+.itemMenuPerfil:hover {
+  color: var(--cinza1);
+  transition: 250ms;
+}
+
+.fotoPerfil {
+  max-height: 180px;
+  max-width: 180px;
+  border-radius: 50%;
+}
+
+.componentesPerfil {
+  background-color: var(--branco0);
+  min-height: 100px;
+  width: 850px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: var(--sombra);
+}
+
+.infoUsuario {
+  display: flex;
+}

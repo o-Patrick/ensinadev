@@ -1,0 +1,18 @@
+.voltar {
+	margin-top: 2%;
+	margin-left: 5%;
+	width: 35px;
+}
+
+.voltar i {
+	padding: 4px;
+	font-size: 35px;
+	border: 3px solid var(--preto0);
+	border-radius: 50%;
+}
+
+.voltar i:hover {
+	transition: 100ms linear;
+	color: var(--cinza3);
+	background-color: var(--preto0);
+}

@@ -1,0 +1,137 @@
+<h2>Básico</h2>
+
+<p>CSS também não é linguagem de programação, nem de marcação, mas sim de folhas de estilo. Isso significa basicamente que ela serve para aplicar estilos aos elementos de uma página. Ou seja, deixar nosso site bonito.</p>
+
+<p>Um exemplo: no HTML, temos a tag &lt;body&gt;&lt;/body&gt; onde fica todo o conteúdo do site. Se quisermos alterar a cor de fundo de todo o body do documento, podemos fazer assim:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>body { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;background-color: blue; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>Aqui, a palavra body (sem os &lt;&gt;) é o "nome" do elemento que a gente quer mudar. Tudo o que estiver dentro de {} será aplicado ao nosso body. E nesse caso, nós fizemos uma declaração que muda a cor de fundo (background-color) do nosso body para azul (blue). Só não pode esquecer do detalhe do ponto e vírgula (;) no final de cada propriedade, ele é obrigatório. Outro detalhe é que as propriedades não podem estar em letras maiúsculas, nem com espaços. No caso de normalmente existir um espaço entre as palavras, precisa colocar um hífen (-) entre elas</p>
+
+<p>Então, a estrutura básica de CSS é essa:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>seletor { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;atributo: valor; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>} <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;/* esse não resultaria em nada, porque o nome do seletor, do atributo e do valor não existem na linguagem */</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(1)">Testar</button>
+</section>
+
+<p>Vimos que as tags html possuem o nome da tag na abertura/fechamento e dentro delas podemos colocar atributos com seus valores. CSS também tem sua própria estrutura: seletor e declaração (com propriedades e valores).</p>
+
+<p>O seletor é o nome de um elemento, id ou classe que está no documento .html (lembrando que só pode colocar o nome da tag, sem os &lt;&gt;). A propriedade é uma característica do seletor (elemento que a gente está mechendo) e o valor é a característica da propriedade.</p>
+
+<p>Mais exemplos práticos:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>h1 { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;font-size: 15 pt; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(2)">Testar</button>
+</section>
+
+<p>Todo h1 vai ter o tamanho de fonte de 15 pontos.</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>p { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;color: red; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(3)">Testar</button>
+</section>
+
+<p>Todo parágrafo terá a cor vermelha (sempre lembrar que "color" é somente a cor das letras).</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>img { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;width: 300px; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(4)">Testar</button>
+</section>
+
+<p>Toda imagem terá 300 pixels de largura.</p>

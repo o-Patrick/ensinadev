@@ -1,0 +1,34 @@
+<h2>Semântica</h2>
+
+<p>Essa aqui é basicamente a razão da existência de HTML5. Até o HTML4 era comum que o próprio HTML tivesse tags que permitissem alterar os estilos dos elementos das páginas, porém isso foi caindo em desuso principalmente com a vinda do HTML5. Atualmente, essa função de estilização pertence ao CSS e, por mais que navegadores ainda possam aplicar essas tags HTML depreciadas (antigas, atrasadas), o correto é não utilizá-las, mas sim as CSS.</p>
+
+<p>Certo, mas para que então serve HTML5? Como vimos anteriormente, HTML é uma linguagem de marcação de texto. Como os estilos dessa linguagem devem deixar de ser utilizados, então a função dela se mantém (firme e forte) a de marcação. E é aí que entra o título desse texto: a semântica.</p>
+
+<p>Semântica é a mesma coisa que significado. Todas as tags HTML tem um significado, até mesmo uma genérica tipo &lt;div&gt;&lt;/div&gt; (que significa qualquer tipo de divisória). Por isso, todo mundo que desenvolve utilizando HTML deve ter uma atenção especial com o que digita, mesmo que aquilo não seja visto por quem usa o programa.</p>
+
+<p>É bem fácil de compreender a semântica das tags já que elas geralmente tem nomes que deixam isso claro, como &lt;img&gt; para imagens, &lt;p&gt;&lt;/p&gt; para parágrafos, ou a já citada &lt;div&gt;&lt;/div&gt;. Porém existem outras, por exemplo, similares à &lt;div&gt;&lt;/div&gt;, que também não tem um efeito visual, mas que servem para deixar seu código mais profissional.</p>
+
+<p>Um exemplo desse tipo de tag é a &lt;section&gt;&lt;/section&gt; que, repetindo, tem quase a mesma função que &lt;div&gt;&lt;/div&gt; (principalmente no visual), porém diz ao navegador que aquela é uma seção de conteúdo com mais significado. É usada simplesmente assim:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;section&gt; <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;&lt;p&gt;Aqui pode colocar qualquer tipo de conteúdo normalmente, o parágrado é só um exemplo&lt;/p&gt; <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;/section&gt;
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>Seguindo a mesma linha de &lt;section&gt;&lt;/section&gt;, existe &lt;aside&gt;&lt;/aside&gt; para qualquer tipo de conteúdo "extra" do site, como aquelas partes menores nos cantos com menus e coisas do tipo ou até um trecho realmente extra depois do seu principal. Falando em principal, uma tag que também é similar, mas agora para definir o conteúdo principal, é &lt;main&gt;&lt;/main&gt;. Só para dar mais um exemplo, existe &lt;footer&gt;&lt;/footer&gt; para o rodapé da página, aquele lugar no final que geralmente tem "Quem somos", "SAC", um telefone ou qualquer outro tipo de informação que o proprietário ache útil.</p>

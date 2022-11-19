@@ -1,0 +1,12 @@
+.bloco {
+	display: flex;
+	width: 700px;
+	height: 100px;
+	background-color: var(--branco0);
+	margin: 20px auto;
+}
+
+.fotoPerfilPequena {
+	width: 35px;
+	border-radius: 50%;
+}

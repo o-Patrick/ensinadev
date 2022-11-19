@@ -1,0 +1,98 @@
+<h2>Cascata</h2>
+
+<p>CSS significa Folhas de Estilo em Cascata (Cascading Styles Sheets). Folhas de estilos já entendemos que são a aparência dos elementos. Mas o que significa "em cascata"? É bem simples, só lembrar de uma cachoeira. A água vem de cima e cai sobre tudo o que estiver abaixo dela. CSS funciona da mesma forma: o que é aplicado em um elemento, também é aplicado em tudo que estiver dentro dele.</p>
+
+<p>Um exemplo voltando mais uma vez para o HTML: temos nossa tag &lt;html&gt;&lt;/html&gt;; dentro dela temos as tags &lt;head&gt;&lt;/head&gt; e &lt;body&gt;&lt;/body&gt;; dentro de &lt;head&gt;&lt;/head&gt; temos &lt;title&gt;&lt;/title&gt;; e dentro de &lt;body&gt;&lt;/body&gt; temos &lt;h1&gt;&lt;/h1&gt;, &lt;p&gt;&lt;/p&gt;, &lt;img&gt; etc. Já deu para perceber que existe uma hierarquia né? A estrutura não é só de enfeite, as coisas estão ligadas às que estão acima delas.</p>
+
+<p>Um exemplo mais prático com essa estrutura HTML:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;h1&gt;Título&lt;/h1&gt; <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&lt;p&gt;Um texto aleatório aqui.&lt;/p&gt;
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>Se para ela fizermos no CSS:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>body { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;color: white; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;background-color: black; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;font-size: 14pt; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(1)">Testar</button>
+</section>
+
+<p>Todos os elementos dentro de body terão cor de letra branca, cor de fundo preta e tamanho da fonte de 14 pontos. Simples, né?</p>
+
+<p>A questão é que uma declaração não é "eterna", na verdade quanto mais específico for a forma que você usa CSS, mais detalhadamente pode aplicar um estilo. Imaginando ainda o exemplo que acabei de dar, se fizer isso:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&lt;!DOCTYPE html&gt;</span>
+      <span class="escondido">&lt;html lang="pt-br"&gt;</span>
+      <span class="escondido">&lt;head&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;style&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>body { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;color: white; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;background-color: black; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;font-size: 14pt; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>} <br /> <br />
+
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>p { <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;color: yellow; <br />
+      <span class="escondido">&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+      <span class="escondido">&nbsp;&nbsp;&lt;/style&gt;</span>
+      <span class="escondido">&lt;/head&gt;</span>
+      <span class="escondido">&lt;body&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;h1&gt;Título&lt;/h1&gt;</span>
+      <span class="escondido">&nbsp;&nbsp;&lt;p&gt;Um texto aleatório aqui&lt;/p&gt;</span>
+      <span class="escondido">&lt;/body&gt;</span>
+      <span class="escondido">&lt;/html&gt;</span>
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(2)">Testar</button>
+</section>
+
+<p>Primeiramente o parágrafo herda a cor branca definida para o body, porém por ser mais específica (digitei diretamente p) ela sobrescreve a configuração anterior, então a cor que se sobressai no caso de p, é a amarela.</p>
+
+<p>Chega de teoria e deixa eu mostrar logo como fica:</p>
+
+<div class="exemploEstilo" style="color: white; background-color: black; font-size: 14pt;">
+  <h1 style="text-align: left;">Título</h1>
+  <p style="color: yellow;">Um texto aleatório aqui</p>
+</div>

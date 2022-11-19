@@ -1,0 +1,53 @@
+main form:not(.formBtn, .formBtnTema) {
+	background-color: var(--branco0);
+	margin-top: 20px;
+	padding: 20px 30px;
+	width: 30vw;
+	min-width: 300px;
+	border-radius: 5px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.514);
+}
+
+.frmCampo {
+	margin-top: 15px;
+}
+
+main input {
+	background-color: var(--branco0);
+	width: 80%;
+	height: 2em;
+	border-radius: 5px;
+	border: 1px solid var(--cinza1);
+	font-size: 18px;
+}
+
+main form input:hover, main form input:focus {
+	background-color: var(--cinza3);
+	border: 1px solid var(--preto0);
+	outline: none;
+	color: var(--preto0);
+	transition: 200ms;
+}
+
+main form label {
+	display: block;
+}
+
+.frmObrigatorio {
+	color: #F00;
+	font-size: 16px;
+}
+
+.containerBtns {
+	display: flex;
+}
+
+.frmLink {
+	margin: 10px 0;
+	color: var(--cinza1);
+	font-size: 17px;
+}
+
+.frmLink:hover {
+	text-decoration: underline;
+}
