@@ -59,7 +59,7 @@
 							echo	 "<div class='opcoesComentario' onclick='respondeComentario($idComentario)'>";
 							echo     "<a href='#containerComentarios' class='responder'><i class='fa-solid fa-reply'></i></a>";
 							if ($linha->ID_USUARIO === $_SESSION["idUsuario"]) {
-								echo     "<a href='#responder' class='excluir'><i class='fa-solid fa-trash'></i></a>";
+								echo   "<a href='../../assets/funcoes/comentarios/exclui-comentario.php?idComentario=$idComentario' class='excluir'><i class='fa-solid fa-trash'></i></a>";
 							}
 							echo	 "</div>";
 						} // isset session idUsuario
