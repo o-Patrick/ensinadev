@@ -1,0 +1,59 @@
+Tipos de variáveis e escopos
+
+Programação é definida, basicamente, pelo manuseio de diversos dados, seja diretamente por bancos de dados ou simplesmente um número inserido por um usuário para um aplicativo de calcudora. Para facilitar o uso desses dados, as linguagens de programação possuem uma coisa essencial chamada de variável.
+
+Como o próprio nome diz, uma variável é algo que varia, que muda. Mas como veremos mais à frente, no desenvolvimento este nem sempre é o caso, portanto "variável" acaba sendo um termo guarda-chuva. Mas afinal, o que são variáveis então? Elas são espaços na memória dos computadores alocados para guardar aqueles tipos de informações citadas acima. Esse que é o grande ponto positivo delas, porque tendo aquele valor na memória do computador, é possível acessá-la com mais facilidade a praticamente qualquer momento.
+
+JavaScript é uma linguagem que possui três formas de variáveis: var, let e const.
+
+var
+
+A declaração mais simples, que nasceu com o JavaScript. Para declarar uma variável, basta digitar:
+
+var nomeVariavel
+
+Em JS não é necessário definir o tipo da variável ao declará-la (number, string, boolean), nem colocar ; no final dos comandos como em outras linguagens.
+
+À princípio, precisaríamos digitar o valor desejado em todo momento que quiséssemos usá-lo, porém com a declaração feita, podemos fazer isso apenas repetindo o nome da variável, mesmo se repetidas vezes, sem problema algum.
+
+Então, ao invés de digitar-mos:
+
+console.log(5 + 7, " ", 5 - 7)
+
+Faremos:
+
+var num1 = 5, num2 = 7
+
+console.log(num1 + num2, " ", num1 - num2)
+
+Como você já deve ter percebido, caso eu queira alterar o valor dos doos números 5 do primeiro caso, seria necessário mudar cada um deles. Em códigos simples como dos exemplos, isso não seria problema, mas imagine só em códigos realmente profissionais com cetenas ou até milhares de linhas, em que o mesmo valor precisa ser usado? Então no segundo caso, basta alterar o valor 5 atribuído à variável num1 e o resultado das contas muda.
+
+De diferencial de var para let e const, é que var, independentemente do local onde é declarada no código, ela possui escopo globla, significando que pode ser acessada por todo o código. Isso é um problema na segurança do funcionamento do código, além de um mau uso da memória do dispositivo. Uma variável só ser acessada quando e onde for necessário, nada mais.
+
+
+let
+
+É bem similar a var nos seus quesitos, o que muda é justamente a questão do escopo explicada no parágrafo anterior. Este tipo de variável tem somente escopo local, o que significa que só pode ser utilizada dentro de onde foi declarada, sendo um dos tipos mais usados profissionalmente ao lado de const. Para demonstrar o escopo, o exemplo utiliza uma função, porém não há necessidade de entendê-la por completo; o que precisamos no momento será explicado.
+
+function soma() {
+  let num1 = 5, num2 = 7
+  console.log(num1 + num2)
+}
+
+soma()
+
+console.log(num1 + num2)
+
+Como podemos ver, o segundo console.log dá erro, isso porque num1 e num2 foram declaradas dentro da função soma(), não podendo ser acessadas de fora deste local. Já o console.log dentro desta mostra com sucesso a conta.
+
+const
+
+Para o último tipo, encontramos uma característica em const. O nome vem de constante que, diferente de uma variável, permanece o igual a todo momento (evidentemente). No quesito escopo, const possui escopo local assim como let, porém comparado a suas duas companheiras, retorna um erro caso seu valor tente ser alterado. Vamos a um exemplo:
+
+const num1 = 5, num2 = 7
+
+console.log(num1 + num2)
+
+num1 = 8
+
+Neste caso nem precisamos de um console.log para mostrar o valor de num1 porque este mostra uma mensagem de erro ao lado da conta bem sucedida no log existente. Portanto, o valor de uma const permanece o mesmo que no seu momento de declaração, não podendo ser alterado, o que adicionado uma camada de segurança para alguns valores que manuseamos em um código.

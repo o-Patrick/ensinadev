@@ -1,0 +1,93 @@
+<h2>Tipos de variáveis e escopos</h2>
+
+<p>Programação é definida, basicamente, pelo manuseio de diversos dados, seja diretamente por bancos de dados ou simplesmente um número inserido por um usuário para um aplicativo de calcudora. Para facilitar o uso desses dados, as linguagens de programação possuem uma coisa essencial chamada de variável.</p>
+
+<p>Como o próprio nome diz, uma variável é algo que varia, que muda. Mas como veremos mais à frente, no desenvolvimento este nem sempre é o caso, portanto "variável" acaba sendo um termo guarda-chuva. Mas afinal, o que são variáveis então? Elas são espaços na memória dos computadores alocados para guardar aqueles tipos de informações citadas acima. Esse que é o grande ponto positivo delas, porque tendo aquele valor na memória do computador, é possível acessá-la com mais facilidade a praticamente qualquer momento.</p>
+
+<p>JavaScript é uma linguagem que possui três formas de variáveis: var, let e const.</p>
+
+<h3>var</h3>
+
+<p>A declaração mais simples, que nasceu com o JavaScript. Para declarar uma variável, basta digitar:</p>
+
+<hr>
+var nomeVariavel
+<hr>
+
+<p>Em JS não é necessário definir o tipo da variável ao declará-la (number, string, boolean), nem colocar ; no final dos comandos como em outras linguagens.</p>
+
+<p>À princípio, precisaríamos digitar o valor desejado em todo momento que quiséssemos usá-lo, porém com a declaração feita, podemos fazer isso apenas repetindo o nome da variável, mesmo se repetidas vezes, sem problema algum.</p>
+
+<p>Então, ao invés de digitar-mos:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+    <span class="escondido">&nbsp;&nbsp;</span>console.log(5 + 7, " ", 5 - 7)
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(0)">Testar</button>
+</section>
+
+<p>Faremos:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+    <span class="escondido">&nbsp;&nbsp;</span>var num1 = 5, num2 = 7 <br />
+
+    <span class="escondido">&nbsp;&nbsp;</span>console.log(num1 + num2, " ", num1 - num2)
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(1)">Testar</button>
+</section>
+
+<p>Como você já deve ter percebido, caso eu queira alterar o valor dos doos números 5 do primeiro caso, seria necessário mudar cada um deles. Em códigos simples como dos exemplos, isso não seria problema, mas imagine só em códigos realmente profissionais com cetenas ou até milhares de linhas, em que o mesmo valor precisa ser usado? Então no segundo caso, basta alterar o valor 5 atribuído à variável num1 e o resultado das contas muda.</p>
+
+<p>De diferencial de var para let e const, é que var, independentemente do local onde é declarada no código, ela possui escopo globla, significando que pode ser acessada por todo o código. Isso é um problema na segurança do funcionamento do código, além de um mau uso da memória do dispositivo. Uma variável só ser acessada quando e onde for necessário, nada mais.</p>
+
+
+<h3>let</h3>
+
+<p>É bem similar a var nos seus quesitos, o que muda é justamente a questão do escopo explicada no parágrafo anterior. Este tipo de variável tem somente escopo local, o que significa que só pode ser utilizada dentro de onde foi declarada, sendo um dos tipos mais usados profissionalmente ao lado de const. Para demonstrar o escopo, o exemplo utiliza uma função, porém não há necessidade de entendê-la por completo; o que precisamos no momento será explicado.</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&nbsp;&nbsp;</span>function soma() { <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;let num1 = 5, num2 = 7 <br />
+      <span class="escondido">&nbsp;&nbsp;</span>&nbsp;&nbsp;console.log(num1 + num2) <br />
+      <span class="escondido">&nbsp;&nbsp;</span>} <br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>soma() <br /><br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>console.log(num1 + num2)
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(2)">Testar</button>
+</section>
+
+<p>Como podemos ver, o segundo console.log dá erro, isso porque num1 e num2 foram declaradas dentro da função soma(), não podendo ser acessadas de fora deste local. Já o console.log dentro desta mostra com sucesso a conta.</p>
+
+<h3>const</h3>
+
+<p>Para o último tipo, encontramos uma característica em const. O nome vem de constante que, diferente de uma variável, permanece o igual a todo momento (evidentemente). No quesito escopo, const possui escopo local assim como let, porém comparado a suas duas companheiras, retorna um erro caso seu valor tente ser alterado. Vamos a um exemplo:</p>
+
+<section class='exemploCodigo'>
+  <div class='codigo'>
+    <code>
+      <span class="escondido">&nbsp;&nbsp;</span>const num1 = 5, num2 = 7 <br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>console.log(num1 + num2) <br />
+
+      <span class="escondido">&nbsp;&nbsp;</span>num1 = 8
+    </code>
+  </div>
+
+  <button class='btn btnTestar' onclick="carregaEditor(3)">Testar</button>
+</section>
+
+<p>Neste caso nem precisamos de um console.log para mostrar o valor de num1 porque este mostra uma mensagem de erro ao lado da conta bem sucedida no log existente. Portanto, o valor de uma const permanece o mesmo que no seu momento de declaração, não podendo ser alterado, o que adicionado uma camada de segurança para alguns valores que manuseamos em um código.</p>
