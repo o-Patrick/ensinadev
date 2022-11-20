@@ -17,7 +17,7 @@
 							++$qtdHtml;
 						} elseif ($tema === "CSS") {
 							++$qtdCss;
-						} elseif ($tema === "JAVASCRIPT") {
+						} elseif ($tema === "JavaScript") {
 							++$qtdJs;
 						} elseif ($tema === "PHP") {
 							++$qtdPhp;
@@ -101,7 +101,8 @@
 			}
 			echo	     "</button>";
 			echo	 "</div>";
-		} elseif ($qtdCssConcluido > 0) {
+		}
+		if ($qtdCssConcluido > 0) {
 			echo   "<h3 class='titulo'>CSS</h3>";
 			echo 	 "<p>" . $porcentCss . "% concluído</p>";
 			echo   "<div class='barraProgresso'>
@@ -117,7 +118,8 @@
 			}
 			echo	     "</button>";
 			echo	 "</div>";
-		} elseif ($qtdJsConcluido > 0) {
+		}
+		if ($qtdJsConcluido > 0) {
 			echo   "<h3 class='titulo'>JavaScript</h3>";
 			echo 	 "<p>" . $porcentJs . "% concluído</p>";
 			echo   "<div class='barraProgresso'>
@@ -133,7 +135,8 @@
 			}
 			echo	     "</button>";
 			echo	 "</div>";
-		} elseif ($qtdPhpConcluido > 0) {
+		}
+		if ($qtdPhpConcluido > 0) {
 			echo   "<h3 class='titulo'>PHP</h3>";
 			echo 	 "<p>" . $porcentPhp . "% concluído</p>";
 			echo   "<div class='barraProgresso'>
@@ -149,7 +152,8 @@
 			}
 			echo	     "</button>";
 			echo	 "</div>";
-		} else {
+		}
+		if ($qtdHtmlConcluido <= 0 && $qtdCssConcluido <= 0 && $qtdJsConcluido <= 0 && $qtdPhpConcluido <= 0) {
 			echo "<p>Nenhum tema em progresso!</p>";
 		}
 		echo   "</div>";

@@ -34,7 +34,6 @@
 		<script src="https://kit.fontawesome.com/33301695b5.js" crossorigin="anonymous" defer></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
 		<script src="ver-mais_feed.js"></script>
-		<script src="../../assets/funcoes/notificacao/notif-vista.js"></script>
 
 		<title>Perfil &vert; EnsinaDev</title>
 	</head>
