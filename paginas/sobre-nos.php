@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="../assets/estilos/geral.css">
 	<link rel="stylesheet" href="../assets/estilos/mainBtn.css">
 	<link rel="stylesheet" href="../assets/estilos/gerenciador.css">
+	<link rel="stylesheet" href="../assets/estilos/sobreNos.css">
 
 	<!-- scripts -->
 	<script src="https://kit.fontawesome.com/33301695b5.js" crossorigin="anonymous" defer></script>
@@ -65,7 +66,14 @@
 		</div>
 	</header>
 
-	<main class="containerFlex">
+	<main>
+		<article class="componenteCentral sobreNos">
+			<h2>Sobre nós</h2>
+
+			<p>O EnsinaDev nasceu do desejo de ajudar colegas de classe da sua equipe desenvolvedora. Algumas pessoas buscaram ajuda com matérias e, vendo que um grande número de outros alunos também tinham dificuldade de absorver os conteúdos das aulas, nós entedemos que era necessário produzir conteúdo didático que pudesse suprir essa necessidade, agrupando temas das linguagens estudadas em um único lugar e de forma acessível, fugindo dos termos mais técnicos usados por sites similares, tendo também espaço para testar os códigos passadas, além de toda uma comunidade que amplia o apoio aos estudantes.</p>
+
+			<p>A equipe EnsinaDev acredita que o ensino deve ser gratuito, de qualidade e que possa realmente ser incorporado na visão de mundo das pessoas. Isso é o que nos guia.</p>
+		</article>
 	</main>
 
 	<footer class="rodapeFlex">

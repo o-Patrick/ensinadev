@@ -1,0 +1,11 @@
+.sobreNos {
+  background-color: var(--branco0);
+  border-radius: 3px;
+  max-width: 900px;
+  padding: 20px;
+  box-shadow: var(--sombra);
+}
+
+.sobreNos p {
+  margin: 1.1em auto;
+}
