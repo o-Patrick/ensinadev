@@ -13,7 +13,7 @@
 
 		$msgRecuperacao = "<h1>E-mail de recuperação</h1>
 											<p>Abaixo está link para a recuperação da sua senha no EnsinaDev!</p>
-											<a href='http://localhost/ensinadev_mao/paginas/acesso/recuperar-senha.php?email=$email'>
+											<a href='http://localhost/ensinadev/paginas/acesso/recuperar-senha.php?email=$email'>
 												Recuperar minha senha
 											</a>
 											<p>Atenciosamente,</p>
@@ -57,7 +57,7 @@
 						if($mail->send()) {
 							unset($email);
 
-							echo "<script> alert('E-mail de recuperação enviado com sucesso! Cheque sua caixa de entrada ou de spam para acessar o link') </script>";
+							echo "<script> alert('E-mail de recuperação enviado com sucesso! Verifique sua caixa de entrada ou de spam para acessar o link') </script>";
 							echo "<meta http-equiv='refresh' content='0; ../../../index.php'>";
 						} else {
 							echo "<script> alert('ERRO: e-mail de recuperação não enviado. Se o erro persistir, fale conosco em Contato') </script>";

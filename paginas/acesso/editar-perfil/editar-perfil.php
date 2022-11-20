@@ -178,12 +178,18 @@
 							<div class="btnSair">
 								<button type="submit" name="btnSubmit" class="btnSubmit" id="btnSubmit" tabindex="1">Salvar</button>
 							</div>
+						</form>
 
-							<div class="btnExcluir">
-								<button type="submit" name="btnSubmit" class="btnSubmit" tabindex="2">Excluir conta</button>
-							</div>
-						</div>
-					</form>
+						<?php
+							if ($_SESSION["tipoUsuario"] === "E") {
+								echo "<div class='btnExcluir'>";
+								echo "	<a href='../../../assets/funcoes/acesso/excluir-conta.php'>";
+								echo "		<button type='button' name='btnSubmit' class='btnSubmit' id='btnSubmit' tabindex='2'>Excluir conta</button>";
+								echo "	</a>";
+								echo "</div>";
+							}
+						?>
+					</div>
 				</section>
 			</div>
 		</main>
