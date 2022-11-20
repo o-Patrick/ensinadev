@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	if (session_status() == PHP_SESSION_NONE) session_start();
 	$_SESSION["pagina"] = "tema";
 	require "../../assets/funcoes/conexao.php";
 	require "../../assets/funcoes/acesso/perfil/mostra-progresso_tema.php";
@@ -20,6 +20,7 @@
 		<link rel="stylesheet" href="../../assets/estilos/tema.css" />
 		<link rel="stylesheet" href="../../assets/estilos/progressoTema.css" />
 		<link rel="stylesheet" href="../../assets/estilos/btnVoltar.css" />
+		<link rel="stylesheet" href="../../assets/estilos/gerenciador.css" />
 
 		<!-- scripts -->
 		<script src="https://kit.fontawesome.com/33301695b5.js" crossorigin="anonymous" defer></script>
@@ -61,7 +62,13 @@
 			<div class="usuario">
 				<a href="../acesso/acessar-conta.php">
 					<div class="iconeUsuario">
-						<i class="fa-solid fa-user"></i>
+					<?php
+						if (!isset($_SESSION["idUsuario"]) || $_SESSION["imgUsuario"] == null) {
+							echo "<i class='fa-solid fa-user'></i>";
+						} else {
+							echo "<img src='../../assets/img/" . $_SESSION["imgUsuario"] . "' class='fotoPerfilPequena' />";
+						}
+					?>
 					</div>
 				</a>
 			</div>

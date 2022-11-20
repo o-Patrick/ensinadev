@@ -12,7 +12,7 @@
 		}
 
 		try{
-			$comando = $conexao -> prepare("SELECT ID_USUARIO, NOME_USUARIO, SENHA_USUARIO, TIPO_USUARIO FROM TB_USUARIO WHERE NOME_USUARIO = ? AND SENHA_USUARIO = ?");
+			$comando = $conexao -> prepare("SELECT * FROM TB_USUARIO WHERE NOME_USUARIO = ? AND SENHA_USUARIO = ?");
 			$comando -> bindParam(1, $usuario);
 			$comando -> bindParam(2, $senha);
 
@@ -21,6 +21,7 @@
 					$linha = $comando -> fetch(PDO::FETCH_OBJ);
 					$_SESSION["idUsuario"] = $linha -> ID_USUARIO;
 					$_SESSION["tipoUsuario"] = $linha -> TIPO_USUARIO;
+					$_SESSION["imgUsuario"] = $linha -> IMAGEM_USUARIO;
 					
 					$usuario = null;
 					$senha = null;

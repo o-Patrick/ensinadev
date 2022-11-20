@@ -51,6 +51,7 @@
           echo "<script> console.log(document.querySelector('#erro').innerText) </script>";
         } // try/catch
 
+        $_SESSION["imgUsuario"] = $novoNomeFoto;
         echo "<script> alert('Foto alterada com sucesso!') </script>";
         echo "<meta http-equiv='refresh' content='0; ../../../../paginas/acesso/editar-perfil/editar-perfil.php' />";
       } else {

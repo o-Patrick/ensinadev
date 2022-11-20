@@ -49,13 +49,14 @@
 		$idUsuario = $conexao -> lastInsertId();
 		$_SESSION['idUsuario'] = $idUsuario;
 
-		$comando = $conexao -> prepare("SELECT TIPO_USUARIO FROM TB_USUARIO WHERE ID_USUARIO = ?");
+		$comando = $conexao -> prepare("SELECT IMAGEM_USUARIO, TIPO_USUARIO FROM TB_USUARIO WHERE ID_USUARIO = ?");
 		$comando -> bindParam(1, $_SESSION["idUsuario"]);
 
 		if($comando -> execute()){
 			if($comando -> rowCount() > 0){
 				while($linha = $comando -> fetch(PDO::FETCH_OBJ)){
 					$_SESSION["tipoUsuario"] = $linha -> TIPO_USUARIO;
+					$_SESSION["imgUsuario"] = $linha -> IMAGEM_USUARIO;
 				}
 			}
 			$idUsuario = null;

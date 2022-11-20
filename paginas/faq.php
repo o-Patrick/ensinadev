@@ -1,3 +1,5 @@
+<?php if (session_status() == PHP_SESSION_NONE) session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
@@ -12,12 +14,12 @@
 		<link rel="stylesheet" href="../assets/estilos/enviarTexto.css">
 		<link rel="stylesheet" href="../assets/estilos/botao.css">
 		<link rel="stylesheet" href="../assets/estilos/faq.css">
+		<link rel="stylesheet" href="../assets/estilos/gerenciador.css">
 
 		<!-- font awesome -->
 		<script src="https://kit.fontawesome.com/33301695b5.js" crossorigin="anonymous" defer></script>
 
 		<script src="../assets/funcoes/faq.js" defer></script>
-
 
 		<title>FAQ &vert; EnsinaDev</title>
 	</head>
@@ -56,7 +58,13 @@
 			<div class="usuario">
 				<a href="acesso/acessar-conta.php">
 					<div class="iconeUsuario">
-						<i class="fa-solid fa-user"></i>
+						<?php
+							if (!isset($_SESSION["idUsuario"]) || $_SESSION["imgUsuario"] == null) {
+								echo "<i class='fa-solid fa-user'></i>";
+							} else {
+								echo "<img src='../assets/img/" . $_SESSION["imgUsuario"] . "' class='fotoPerfilPequena' />";
+							}
+						?>
 					</div>
 				</a>
 			</div>
