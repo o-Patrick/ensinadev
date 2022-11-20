@@ -29,12 +29,21 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
 		<script src="../../assets/funcoes/comentarios/responde-comentario.js" defer></script>
 		<script src="../../assets/funcoes/comentarios/btn-ver.js" defer></script>
+		<!-- editor -->
 		<script>
 			function carregaEditor(i) {
 				const codigoExemplo = document.getElementsByClassName('codigo');
 				sessionStorage.setItem('codigoExemplo', codigoExemplo[i].innerHTML);
 				open("./../../assets/online-ide-master/ui/ide.html", '_blank');
 			}
+		</script>
+		<!-- voltar ao topo -->
+		<script>
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+				document.body.scrollTop = 0; // For Safari
+				document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+			} 
 		</script>
 
 		<title>EnsinaDev</title>
@@ -127,6 +136,8 @@
 			</section> <!-- containerComentarios -->
 		</main>
 
+		<button onclick="topFunction()" id="myBtn" title="Go to top">&uparrow;</button> 
+		
 		<footer class="rodapeFlex">
 			<p class="direitos">Copyright &copy; 2022 EnsinaDev &vert; ETEC Lauro Gomes</p>
 		</footer>
