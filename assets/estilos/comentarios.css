@@ -23,7 +23,7 @@
 	width: 80%;
 }
 
-.comentario {
+.comentario:not(.opcoesComentario) {
 	display: flex;
 	align-items: center;
 	align-content: center;
@@ -47,14 +47,18 @@
 	display: flex;
 }
 
-.responderComentario {
+.opcoesComentario {
   margin-left: auto; 
 	font-size: .75em;
 }
 
-.responderComentario:hover {
+.responder, .excluir {
+	margin: auto 10px;
+}
+
+.responder:hover, .excluir:hover {
 	color: var(--cinza2);
-	transition: 150ms linear;
+	transition: 120ms linear;
 }
 
 .original {

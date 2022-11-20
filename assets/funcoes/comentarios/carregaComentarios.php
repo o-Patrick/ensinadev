@@ -14,10 +14,10 @@
 
 		try {
 			if ($btn == "" || $btn == "menos") {
-				$comando = $conexao->prepare("SELECT TBU.NOME_USUARIO, TBU.IMAGEM_USUARIO, TBC.ID_COMENTARIO_USUARIO, TBC.TEXTO_COMENTARIO_USUARIO, TBC.RESPONDER_COMENTARIO_USUARIO FROM TB_COMENTARIO_USUARIO AS TBC JOIN TB_USUARIO AS TBU ON TBC.ID_USUARIO = TBU.ID_USUARIO JOIN TB_ITEM_TEMA AS TBI ON TBC.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_ITEM_TEMA = ? ORDER BY ID_COMENTARIO_USUARIO DESC LIMIT 3");
+				$comando = $conexao->prepare("SELECT TBU.ID_USUARIO, TBU.NOME_USUARIO, TBU.IMAGEM_USUARIO, TBC.ID_COMENTARIO_USUARIO, TBC.TEXTO_COMENTARIO_USUARIO, TBC.RESPONDER_COMENTARIO_USUARIO FROM TB_COMENTARIO_USUARIO AS TBC JOIN TB_USUARIO AS TBU ON TBC.ID_USUARIO = TBU.ID_USUARIO JOIN TB_ITEM_TEMA AS TBI ON TBC.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_ITEM_TEMA = ? ORDER BY ID_COMENTARIO_USUARIO DESC LIMIT 3");
 				$comando->bindParam(1, $_SESSION["item"]);
 			} else {
-				$comando = $conexao->prepare("SELECT TBU.NOME_USUARIO, TBU.IMAGEM_USUARIO, TBC.ID_COMENTARIO_USUARIO, TBC.TEXTO_COMENTARIO_USUARIO, TBC.RESPONDER_COMENTARIO_USUARIO FROM TB_COMENTARIO_USUARIO AS TBC JOIN TB_USUARIO AS TBU ON TBC.ID_USUARIO = TBU.ID_USUARIO JOIN TB_ITEM_TEMA AS TBI ON TBC.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_ITEM_TEMA = ? ORDER BY ID_COMENTARIO_USUARIO DESC");
+				$comando = $conexao->prepare("SELECT TBU.ID_USUARIO, TBU.NOME_USUARIO, TBU.IMAGEM_USUARIO, TBC.ID_COMENTARIO_USUARIO, TBC.TEXTO_COMENTARIO_USUARIO, TBC.RESPONDER_COMENTARIO_USUARIO FROM TB_COMENTARIO_USUARIO AS TBC JOIN TB_USUARIO AS TBU ON TBC.ID_USUARIO = TBU.ID_USUARIO JOIN TB_ITEM_TEMA AS TBI ON TBC.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_ITEM_TEMA = ? ORDER BY ID_COMENTARIO_USUARIO DESC");
 				$comando->bindParam(1, $_SESSION["item"]);
 			}
 
@@ -55,11 +55,14 @@
 
 						echo 	 "<p>$linha->TEXTO_COMENTARIO_USUARIO</p>";
 
-						echo	 "<div class='responderComentario' onclick='respondeComentario($idComentario)'>";
-						echo     "<a href='#responder'>";
-						echo 	     "<p>Responder</p>";
-						echo     "</a>";
-						echo	 "</div>";
+						if (isset($_SESSION["idUsuario"])) {
+							echo	 "<div class='opcoesComentario' onclick='respondeComentario($idComentario)'>";
+							echo     "<a href='#containerComentarios' class='responder'><i class='fa-solid fa-reply'></i></a>";
+							if ($linha->ID_USUARIO === $_SESSION["idUsuario"]) {
+								echo     "<a href='#responder' class='excluir'><i class='fa-solid fa-trash'></i></a>";
+							}
+							echo	 "</div>";
+						} // isset session idUsuario
 						echo "</div>"; // comentario
 					} // while
 

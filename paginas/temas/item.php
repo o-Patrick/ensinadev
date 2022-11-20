@@ -23,7 +23,7 @@
 		<link rel="stylesheet" href="../../assets/estilos/btnVoltar.css" />
 		<link rel="stylesheet" href="../../assets/estilos/botao.css"/>
 		<link rel="stylesheet" href="../../assets/estilos/faq.css" />
-		<link rel="stylesheet" href="assets/estilos/gerenciador.css" />
+		<link rel="stylesheet" href="../../assets/estilos/gerenciador.css" />
 
 		<!-- scripts -->
 		<script src="https://kit.fontawesome.com/33301695b5.js" crossorigin="anonymous" defer></script>
@@ -116,7 +116,7 @@
 			</article>
 
 			<!-- onde o usuário comenta -->
-			<section class="componenteCentral containerFlex containerComentarios containerResponder">
+			<section class="componenteCentral containerFlex containerComentarios containerResponder" id="containerComentarios">
 				<div id="comentarioOriginal"></div>
 
 				<form action="../../assets/funcoes/comentarios/insereComentario.php" method="post" id="frmEnviarComentario">
