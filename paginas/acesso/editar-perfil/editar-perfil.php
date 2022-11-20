@@ -153,22 +153,27 @@
 								</a>
 							</div>
 
-							<div class="infoUsuario nomeUsuario">
+							<div class='infoUsuario nomeUsuario'>
 								<?php echo "<input type='text' value='" . mostraNomeUsuario($conexao) . "' name='nomeUsuario' id='nomeUsuario' readonly />"; ?>
-								<button type="button" id="btnAlteraNome" onclick=alteraNome()>Alterar</button>
+								<button type='button' id='btnAlteraNome' onclick=alteraNome()>Alterar</button>
 							</div>
 
-							<div class="infoUsuario emailUsuario">
-								<?php echo "<input type='text' value='" . mostraEmailUsuario($conexao) . "' name='emailUsuario' id='emailUsuario' readonly />"; ?>
-								<button type="button" id="btnAlteraEmail" onclick=alteraEmail()>Alterar</button>
-							</div>
+							<?php
+								if ($_SESSION["tipoUsuario"] == "E") {
+									echo "<div class='infoUsuario emailUsuario'>";
+									echo 	"<input type='text' value='" . mostraEmailUsuario($conexao) . "' name='emailUsuario' id='emailUsuario' readonly />";
+									echo 	"<button type='button' id='btnAlteraEmail' onclick=alteraEmail()>Alterar</button>";
+									echo "</div>";
 
-							<div class="infoUsuario senhaUsuario">
-								<input type='password' value='               ' name='senhaUsuario' id='senhaUsuario' readonly />
-								<a href="alterar-senha-usuario.php">
-									<button type="button" name="btnSubmit" id="btnAlteraSenha">Alterar</button>
-								</a>
-							</div>
+									echo "<div class='infoUsuario senhaUsuario'>";
+									echo 	"<input type='password' value='               ' name='senhaUsuario' id='senhaUsuario' readonly />";
+									echo 	"<a href='alterar-senha-usuario.php'>";
+									echo 		"<button type='button' name='btnSubmit' id='btnAlteraSenha'>Alterar</button>";
+									echo 	"</a>";
+									echo "</div>";
+								}
+							?>
+
 						</div>
 
 						<!-- btns sair e excluir conta -->
