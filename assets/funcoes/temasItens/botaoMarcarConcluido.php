@@ -3,7 +3,7 @@
 		require "../../assets/funcoes/conexao.php";
 
 		try{
-			$comando = $conexao -> prepare("SELECT TBT.ID_TEMA FROM TB_TEMA AS TBT JOIN TB_ITEM_TEMA AS TBI ON TBT.ID_TEMA = TBI.ID_TEMA WHERE TBT.NOME_TEMA = ? LIMIT 1;");
+			$comando = $conexao -> prepare("SELECT TBT.ID_TEMA FROM TB_TEMA AS TBT JOIN TB_ITEM_TEMA AS TBI ON TBT.ID_TEMA = TBI.ID_TEMA WHERE TBT.NOME_TEMA = ? LIMIT 1");
 			$comando -> bindParam(1, $_SESSION["tema"]);
 
 			if($comando -> execute()){
@@ -22,7 +22,7 @@
 		} // try select
 
 		try{
-			$comando = $conexao -> prepare("SELECT CONCLUIDO_PROGRESSO_TEMA FROM TB_PROGRESSO_TEMA AS TBP JOIN TB_ITEM_TEMA AS TBI ON TBP.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_TEMA = ? AND TBI.NOME_ITEM_TEMA = ?");
+			$comando = $conexao -> prepare("SELECT CONCLUIDO_PROGRESSO_TEMA FROM TB_PROGRESSO_TEMA AS TBP JOIN TB_ITEM_TEMA AS TBI ON TBP.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_TEMA = ? AND TBI.ID_ITEM_TEMA = ?");
 			$comando -> bindParam(1, $idTema);
 			$comando -> bindParam(2, $_SESSION["item"]);
 
