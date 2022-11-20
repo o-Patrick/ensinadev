@@ -1,22 +1,12 @@
 let editor;
 
-window.onloadstart = function() {
-    let language = $("#languages").val();
-
+window.onload = function() {
     editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
-    if (language === "html") {
-        editor.session.setMode("ace/mode/html");
-    } else if (language === "javascript") {
-        editor.session.setMode("ace/mode/javascript");
-    } else if (language === "php") {
-        editor.session.setMode("ace/mode/php");
-    }
-    alert(language)
+    editor.session.setMode("ace/mode/html");
 }
 
 function changeLanguage() {
-
     let language = $("#languages").val();
 
     if(language == 'html')editor.session.setMode("ace/mode/html");
