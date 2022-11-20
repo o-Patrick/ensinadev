@@ -14,10 +14,10 @@
 
 		try {
 			if ($btn == "" || $btn == "menos") {
-				$comando = $conexao->prepare("SELECT TBU.NOME_USUARIO, TBC.ID_COMENTARIO_USUARIO, TBC.TEXTO_COMENTARIO_USUARIO, TBC.RESPONDER_COMENTARIO_USUARIO FROM TB_COMENTARIO_USUARIO AS TBC JOIN TB_USUARIO AS TBU ON TBC.ID_USUARIO = TBU.ID_USUARIO JOIN TB_ITEM_TEMA AS TBI ON TBC.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_ITEM_TEMA = ? ORDER BY ID_COMENTARIO_USUARIO DESC LIMIT 3");
+				$comando = $conexao->prepare("SELECT TBU.NOME_USUARIO, TBU.IMAGEM_USUARIO, TBC.ID_COMENTARIO_USUARIO, TBC.TEXTO_COMENTARIO_USUARIO, TBC.RESPONDER_COMENTARIO_USUARIO FROM TB_COMENTARIO_USUARIO AS TBC JOIN TB_USUARIO AS TBU ON TBC.ID_USUARIO = TBU.ID_USUARIO JOIN TB_ITEM_TEMA AS TBI ON TBC.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_ITEM_TEMA = ? ORDER BY ID_COMENTARIO_USUARIO DESC LIMIT 3");
 				$comando->bindParam(1, $_SESSION["item"]);
 			} else {
-				$comando = $conexao->prepare("SELECT TBU.NOME_USUARIO, TBC.ID_COMENTARIO_USUARIO, TBC.TEXTO_COMENTARIO_USUARIO, TBC.RESPONDER_COMENTARIO_USUARIO FROM TB_COMENTARIO_USUARIO AS TBC JOIN TB_USUARIO AS TBU ON TBC.ID_USUARIO = TBU.ID_USUARIO JOIN TB_ITEM_TEMA AS TBI ON TBC.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_ITEM_TEMA = ? ORDER BY ID_COMENTARIO_USUARIO DESC");
+				$comando = $conexao->prepare("SELECT TBU.NOME_USUARIO, TBU.IMAGEM_USUARIO, TBC.ID_COMENTARIO_USUARIO, TBC.TEXTO_COMENTARIO_USUARIO, TBC.RESPONDER_COMENTARIO_USUARIO FROM TB_COMENTARIO_USUARIO AS TBC JOIN TB_USUARIO AS TBU ON TBC.ID_USUARIO = TBU.ID_USUARIO JOIN TB_ITEM_TEMA AS TBI ON TBC.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA WHERE TBI.ID_ITEM_TEMA = ? ORDER BY ID_COMENTARIO_USUARIO DESC");
 				$comando->bindParam(1, $_SESSION["item"]);
 			}
 
@@ -41,14 +41,16 @@
 						echo "<div class='comentario' id='comentario$idComentario' value='$idComentario'>";
 
 						echo 	 "<div class='usuario'>";
-						echo 		 "<a href='../../paginas/acesso/acessar-conta.php'>";
-						echo 			 "<div class='iconeUsuario'>";
-						echo 				 fotoPerfil($conexao);
-						echo 			 "</div>";
-						echo       "<div class='nomeUsuario'>";
-						echo         "<p>$linha->NOME_USUARIO</p>";
-						echo       "</div>";
-						echo 		 "</a>";
+						echo 		"<div class='iconeUsuario'>";
+						if ($linha->IMAGEM_USUARIO !== null) {
+							echo     "<img src='../../assets/img/$linha->IMAGEM_USUARIO' class='fotoPerfilPequena' />";
+						} else {
+							echo     "<img src='../../assets/img/padrao.jpg' class='fotoPerfilPequena' />";
+						}
+						echo 		"</div>";
+						echo     "<div class='nomeUsuario'>";
+						echo       "<p>$linha->NOME_USUARIO</p>";
+						echo     "</div>";
 						echo 	 "</div>";
 
 						echo 	 "<p>$linha->TEXTO_COMENTARIO_USUARIO</p>";

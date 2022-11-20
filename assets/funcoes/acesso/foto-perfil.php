@@ -1,25 +1,15 @@
 <?php
-  function fotoPerfil($conexao) {
-    // $numUsuario = 1;
-
-    // O SELECT ABAIXO NÃO FUNCIONA
+  function fotoPerfil($conexao, $editar = "") {
+    // pega a imagem do usuário
     try{
       $comando = $conexao -> prepare("SELECT IMAGEM_USUARIO FROM TB_USUARIO WHERE ID_USUARIO = ?");
-      $comando -> bindParam(1, $numUsuario);
-      // if ($_SESSION["pagina"] === "item") {
-      //   $comando -> bindParam(1, $numUsuario);
-      // } else {
-      //   $comando -> bindParam(1, $_SESSION["idUsuario"]);
-      // }
-
-      // $numUsuario++;
+      $comando -> bindParam(1, $_SESSION["idUsuario"]);
 
       if($comando -> execute()){
         if($comando -> rowCount() > 0){
           $linha = $comando -> fetch(PDO::FETCH_OBJ);
           $imgUsuario = $linha -> IMAGEM_USUARIO;
-          // e se o nome dado à imagem for igual ao id_usuario (substituindo a anterior sempre)?
-          if ($_SESSION["pagina"] === "") {
+          if ($editar === "") {
             if ($imgUsuario !== null) {
               echo "<img src='../../assets/img/" . $imgUsuario . "' class='fotoPerfil' />";
             } else {
@@ -27,9 +17,9 @@
             }
           } else {
             if ($imgUsuario !== null) {
-              echo "<img src='../../assets/img/" . $imgUsuario . "' class='fotoPerfilPequena' />";
+              echo "<img src='../../../assets/img/" . $imgUsuario . "' class='fotoPerfil' />";
             } else {
-              echo "<img src='../../assets/img/padrao.jpg' class='fotoPerfilPequena' />";
+              echo "<img src='../../../assets/img/padrao.jpg' class='fotoPerfil' />";
             }
           }
         } else{

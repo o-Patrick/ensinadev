@@ -16,7 +16,7 @@
 		}
 
 		try{
-			$comando = $conexao -> prepare("INSERT INTO TB_USUARIO VALUES (DEFAULT, ?, ?, ?, 'padrao.jpg', FALSE, 'E')");
+			$comando = $conexao -> prepare("INSERT INTO TB_USUARIO VALUES (DEFAULT, ?, ?, ?, NULL, 'E')");
 			$comando -> bindParam(1, $email);
 			$comando -> bindParam(2, $senha);
 			$comando -> bindParam(3, $usuario);

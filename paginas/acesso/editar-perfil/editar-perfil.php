@@ -6,7 +6,6 @@
 	require "../../../assets/funcoes/acesso/foto-perfil.php";
 	require "../../../assets/funcoes/acesso/nome-usuario.php";
 	require "../../../assets/funcoes/acesso/perfil/mostra-email-usuario.php";
-	require "../../../assets/funcoes/acesso/editar-perfil/alterar-foto-usuario.php";
 	$_SESSION["pagina"] = "restrita";
 	verificaLogin();
 ?>
@@ -139,14 +138,19 @@
 
 		<main class="containerFlex">
 			<div class="componenteCentral">
-				<h1 class="titulo">Meu perfil</h1>
+				<h1 class="titulo">Editar perfil</h1>
 				<section class="componenteCentral">
 					<!-- informações usuário + btn editar -->
 					<form action="../../../assets/funcoes/acesso/editar-perfil/salvar-alteracoes.php" method="post">
 						<div class="dadosUsuario">
 							<div class="fotoPerfil">
-								<?php fotoPerfil($conexao); ?>
-								<button>Alterar</button>
+								<?php
+									$editar = true;
+									fotoPerfil($conexao, $editar);
+								?>
+								<a href="alterar-foto-usuario.php">
+									<button type="button">Alterar</button>
+								</a>
 							</div>
 
 							<div class="infoUsuario nomeUsuario">
