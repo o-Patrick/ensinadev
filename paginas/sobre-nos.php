@@ -20,7 +20,7 @@
 		<!-- logo -->
 		<div class="logo">
 			<a href="../index.php">
-				<img src="#" alt="EnsinaDev"/>
+				<h1>EnsinaDev</h1>
 			</a>
 		</div>
 
