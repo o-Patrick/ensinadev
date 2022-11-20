@@ -16,7 +16,7 @@
 				if($comando->rowCount() > 0){
 					$linha = $comando->fetch(PDO::FETCH_OBJ);
 					echo "<script>
-									const campoComentario = document.getElementById('campoComentario');
+									campoComentario = document.getElementById('campoComentario');
 									campoComentario.focus();
 								</script>";
 
@@ -30,12 +30,12 @@
 					echo "</section>";
 
 					echo "<script>
-									const coll = document.getElementsByClassName('collapsible');
+									coll = document.getElementsByClassName('collapsible');
 						
 									for (let i = 0; i < coll.length; i++) {
 										coll[i].addEventListener('click', function() {
 											this.classList.toggle('active');
-											const content = this.nextElementSibling;
+											content = this.nextElementSibling;
 											if (content.style.maxHeight){
 												content.style.maxHeight = null;
 											} else {
