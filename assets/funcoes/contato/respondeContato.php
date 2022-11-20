@@ -72,10 +72,8 @@
 					if($comando -> execute()){
 						if($comando -> rowCount() > 0){
 							echo "<script> console.log('Mensagem marcada como respondida com sucesso!') </script>";
-							echo "<meta http-equiv='refresh' content='0; ../../../paginas/acesso/areaAdm/contato/mensagensContato.php'>";
 						} else {
 							echo "<script>console.log('Erro ao marcar mensagem como respondida!')</script>";
-							echo "<meta http-equiv='refresh' content='0; ../../../paginas/acesso/areaAdm/contato/respondeContato.php'>";
 						} // if rowCount
 					} else {
 						throw new PDOException("Erro: não foi possível executar o comando!");
@@ -83,7 +81,6 @@
 				} catch(PDOException $erro) {
 					echo "<p style='display:none;' id='erro'>Erro: " . $erro -> getMessage() . "</p>";
 					echo "<script> console.log(document.querySelector('#erro').innerText); </script>";
-					echo "<meta http-equiv='refresh' content='0; ../../../paginas/acesso/areaAdm/contato/respondeContato.php'>";
 				} // try/catch
 
 				unset($_SESSION["idMensagem"]);
@@ -91,7 +88,7 @@
 				unset($resposta);
 
 				echo "<script> alert('Resposta enviada com sucesso!') </script>";
-				echo "<meta http-equiv='refresh' content='0; ../../../paginas/acesso/areaAdm/contato/respondeContato.php'>";
+				echo "<meta http-equiv='refresh' content='0; ../../../paginas/acesso/areaAdm/contato/mensagensContato.php'>";
 			} else {
 				echo "<script> alert('ERRO: resposta não enviada!') </script>";
 				echo "<meta http-equiv='refresh' content='0; ../../../paginas/acesso/areaAdm/contato/respondeContato.php'>";
