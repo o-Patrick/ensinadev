@@ -94,7 +94,7 @@
                       <hr>
 											<p>$textoOriginal</p>
 
-											<a href='http://localhost/ensinadev_mao/paginas/temas/item.php?tema=$tema&item=$item'>
+											<a href='http://localhost/ensinadev/paginas/temas/item.php?tema=$tema&item=$item'>
 												Ver página de conteúdo
 											</a>
                       <hr>
