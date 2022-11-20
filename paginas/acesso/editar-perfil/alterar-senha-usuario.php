@@ -56,16 +56,6 @@
 				</a>
 			</div>
 
-			<!-- pesquisar -->
-			<div class="areaBuscaMenu">
-				<form name="frmBusca" class="frmBusca">
-					<input type="search" name="barraPesquisa" class="barraPesquisa" maxlength="20" placeholder="Buscar..."/>
-					<button type="button" name="btnPesquisar" class="btnPesquisar">
-						<i class="fa-solid fa-magnifying-glass"></i>
-					</button>
-				</form>
-			</div>
-
 			<!-- menu -->
 			<div class="menuPrincipal">
 				<nav>
