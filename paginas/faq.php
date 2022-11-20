@@ -71,44 +71,47 @@
 		</header>
 
 		<main>
-			<h2 class="titulo">FAQ</h2>
+			<article class="componenteCentral faq">
+				<h2 class="titulo">FAQ</h2>
+				<section class="containerFaq">
 
-			<section class="containerFaq">
-				<div class="acordeao">
-					<button type="button" class="collapsible">Open Collapsible</button>
-					<div class="content">
-						<p>Lorem ipsum...</p>
+					<div class="acordeao">
+						<button type="button" class="collapsible">O que é o EnsinaDev?</button>
+						<div class="content">
+							<p>O EnsinaDev é um site de ensino de programação em conteúdo textual! Buscamos entrar na linha de frente da educação de uma forma mais similar a sites de documentação das próprias linguagens ou de referências em geral, porém com nosso grande diferencial da busca pela maior didática possível, seja em cada conteúdo explicado, como na própria ordem destes, existindo contraste com os modelos de sites citados que normalmente possuem um linguajar mais técnico e uma organização de textos que não busca construir a escada do conhecimento degrau por degrau, como apenas mostrando temas em ordem alfabética.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="acordeao">
-					<button type="button" class="collapsible">Open Collapsible</button>
-					<div class="content">
-						<p>Lorem ipsum...</p>
+					<div class="acordeao">
+						<button type="button" class="collapsible">O site tem cursos?</button>
+						<div class="content">
+							<p>Não. No momento, o EnsinaDev apenas possui um modelo de conteúdo textual. Porém, no futuro pretendemos ampliar nossas mídias, inclusive certificando nossos estudantes ;)</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="acordeao">
-					<button type="button" class="collapsible">Open Collapsible</button>
-					<div class="content">
-						<p>Lorem ipsum...</p>
+					<div class="acordeao">
+						<button type="button" class="collapsible">Os estudantes podem emitir certificados?</button>
+						<div class="content">
+							<p>Não. No momento, o EnsinaDev não possui um sistema de certificação porque não temos formas de avaliar os estudantes, garantindo que estes absorveram os conteúdos. Nos baseamos em um modelo auto-didata que serve de apoio da maneira que os alunos bem entenderem.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="acordeao">
-					<button type="button" class="collapsible">Open Collapsible</button>
-					<div class="content">
-						<p>Lorem ipsum...</p>
+					<div class="acordeao">
+						<button type="button" class="collapsible">É possível testar o que estou aprendendo?</button>
+						<div class="content">
+							<p>Sim! Em todas as páginas de conteúdos existe ao menos um exemplo de código com um botão "Testar" ao lado, que leva o estudante ao nosso editor de código, onde podem ser executados códigos em HTML, CSS, JavaScript e PHP!</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="acordeao">
-					<button type="button" class="collapsible">Open Collapsible</button>
-					<div class="content">
-						<p>Lorem ipsum...</p>
+					<div class="acordeao">
+						<button type="button" class="collapsible">Onde posso tirar dúvidas?</button>
+						<div class="content">
+							<p>Prezamos muito pelo trabalho coletivo e a ajuda mútua, por isso criamos uma seção de comentários para cada conteúdo, onde os próprios estudantes podem ajudar uns aos outros ou serem ajudados pelos próprios administradores do site! Além disso, estamos à disposição de qualquer um na aba Contato do menu, onde você pode nos enviar qualquer dúvida, que responderemos por e-mail.</p>
+						</div>
 					</div>
-				</div>
-			</section>
+
+				</section>
+			</article>
 		</main>
 
 		<footer class="rodapeFlex">

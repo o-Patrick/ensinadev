@@ -1,5 +1,9 @@
-main h2 {
-  margin: auto;
+.faq {
+  background-color: var(--branco0);
+  border-radius: 3px;
+  max-width: 900px;
+  padding: 20px;
+  box-shadow: var(--sombra);
 }
 
 .containerFaq {
@@ -50,4 +54,5 @@ main h2 {
   overflow: hidden;
   transition: max-height 0.2s linear;
   background-color: #f1f1f1;
+  text-align: justify;
 }
