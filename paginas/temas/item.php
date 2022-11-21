@@ -35,7 +35,7 @@
 			function carregaEditor(i) {
 				const codigoExemplo = document.getElementsByClassName('codigo');
 				sessionStorage.setItem('codigoExemplo', codigoExemplo[i].innerHTML);
-				open("./../../assets/online-ide-master/ui/ide.html", '_blank');
+				open("./../../assets/online-ide-master/ui/ide.php", '_blank');
 			}
 		</script>
 		<!-- voltar ao topo -->

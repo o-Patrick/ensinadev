@@ -1,16 +1,71 @@
+<?php if (session_status() == PHP_SESSION_NONE) session_start(); ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Codeboard Online IDE</title>
+		<!-- estilos -->
+		<link rel="stylesheet" href="../../estilos/root.css">
+		<link rel="stylesheet" href="../../estilos/geral.css">
+		<link rel="stylesheet" href="../../estilos/mainBtn.css">
+		<link rel="stylesheet" href="../../estilos/gerenciador.css">
+		<link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="css/style.css" />
-</head>
+		<!-- scripts -->
+		<script src="https://kit.fontawesome.com/33301695b5.js" crossorigin="anonymous" defer></script>
 
-<body>
+		<title>EnsinaDev</title>
+	</head>
+	<body>
+		<header class="containerFlex">
+			<!-- logo -->
+			<div class="logo">
+				<a href="index.php">
+					<h1>EnsinaDev</h1>
+				</a>
+			</div>
 
-    <div class="header"> Codeboard Online IDE </div>
+			<!-- menu -->
+			<div class="menuPrincipal">
+				<nav>
+					<menu>
+						<ul class="lista containerFlex linkMenu">
+							<a href="index.php" class="itemMenu linkMenu">
+								<li>Home</li>
+							</a>
+							<a href="paginas/faq.php" class="itemMenu linkMenu">
+								<li>FAQ</li>
+							</a>
+							<a href="paginas/sobre-nos.php" class="itemMenu linkMenu">
+								<li>Sobre nós</li>
+							</a>
+							<a href="paginas/contato.php" class="itemMenu linkMenu">
+								<li>Contato</li>
+							</a>
+						</ul>
+					</menu>
+				</nav>
+			</div>
+
+			<!-- usuário -->
+			<div class="usuario">
+				<a href="paginas/acesso/acessar-conta.php">
+					<div class="iconeUsuario">
+						<?php
+							if (!isset($_SESSION["idUsuario"]) || $_SESSION["imgUsuario"] == null) {
+								echo "<i class='fa-solid fa-user'></i>";
+							} else {
+								echo "<img src='../../img/" . $_SESSION["imgUsuario"] . "' class='fotoPerfilPequena' />";
+							}
+						?>
+					</div>
+				</a>
+			</div>
+		</header>
+
     <div class="control-panel">
         Select Language:
         &nbsp; &nbsp;
@@ -82,6 +137,8 @@
         }
     </script>
 
+    <footer class="rodapeFlex">
+        <p class="direitos">Copyright &copy; 2022 EnsinaDev &vert; ETEC Lauro Gomes</p>
+    </footer>
 </body>
-
 </html>

@@ -1,15 +1,3 @@
-*{margin: 0;}
-
-.header {
-    background: #57a958;
-    text-align: left;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 4px;
-    font-family: sans-serif;
-}
-
 .control-panel {
     background: lightgray;
     text-align: right;
@@ -30,7 +18,7 @@
 }
 
 .btn {
-    background: #57a958;
+    background: var(--preto0);
     color: white;
     padding: 8px;
     border: 0;
