@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="../assets/estilos/enviarTexto.css">
 		<link rel="stylesheet" href="../assets/estilos/botao.css">
 		<link rel="stylesheet" href="../assets/estilos/gerenciador.css">
+		<link rel="stylesheet" href="../assets/estilos/btnVoltar.css" />
 
 		<!-- scripts -->
 		<script src="https://kit.fontawesome.com/33301695b5.js" crossorigin="anonymous" defer></script>
@@ -67,11 +68,18 @@
 			</div>
 		</header>
 
+		<!-- botão voltar -->
+		<div class="voltar">
+			<a href="../index.php">
+				<i class="fa-solid fa-arrow-left-long"></i>
+			</a>
+		</div>
+
 		<main>
-			<section class="containerEnviarTexto">
-				<form action="../assets/funcoes/contato/contato.php" method="post" class="frmEnviarTexto">
+			<section class="containerEnviarTexto" style="margin-top:40px;">
+				<form action="../assets/funcoes/contato/contato.php" method="post" class="frmEnviarTexto" style="display: block;">
 					<label for="email">Seu melhor e-mail</label>
-					<input type="email" name="email" id="email" placeholder="exemplo@exemplo.com" tabindex="1" />
+					<input type="email" name="email" id="email" size="20" placeholder="exemplo@exemplo.com" tabindex="1" style="padding: 5px;" />
 
 					<textarea name="campoTexto" id="campoTexto" class="campoTexto" maxlength="2000" placeholder="Digite sua mensagem..." tabindex="2"></textarea>
 					

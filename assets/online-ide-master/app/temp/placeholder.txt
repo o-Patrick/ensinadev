@@ -1,0 +1,1 @@
+Se esta pasta estiver vazia, o google drive apaga e dá erro na execução de códigos no editor.

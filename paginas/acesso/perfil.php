@@ -88,12 +88,14 @@
 		<?php
 			if ($_SESSION["tipoUsuario"] === "A") {
 				echo "<a href='./areaAdm/areaAdm.php'>";
-				echo 	"<div class='voltar'>";
-				echo 		"<i class='fa-solid fa-arrow-left-long'></i>";
-				echo 	"</div>";
-				echo "</a>";
+			} else {
+				echo "<a href='../../index.php'>";
 			}
 		?>
+			<div class="voltar">
+				<i class="fa-solid fa-arrow-left-long"></i>
+			</div>
+		</a>
 
 		<main class="containerFlex">
 			<div class="componenteCentral">

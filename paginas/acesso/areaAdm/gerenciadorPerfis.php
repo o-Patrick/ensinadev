@@ -37,7 +37,7 @@
 		<header class="containerFlex">
 			<!-- logo -->
 			<div class="logo">
-				<a href="../../../../index.php">
+				<a href="../../../index.php">
 					<h1>EnsinaDev</h1>
 				</a>
 			</div>

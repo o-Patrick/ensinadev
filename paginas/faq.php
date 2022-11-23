@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="../assets/estilos/botao.css">
 		<link rel="stylesheet" href="../assets/estilos/faq.css">
 		<link rel="stylesheet" href="../assets/estilos/gerenciador.css">
+		<link rel="stylesheet" href="../assets/estilos/btnVoltar.css" />
 
 		<!-- font awesome -->
 		<script src="https://kit.fontawesome.com/33301695b5.js" crossorigin="anonymous" defer></script>
@@ -71,6 +72,13 @@
 		</header>
 
 		<main>
+			<!-- botão voltar -->
+			<div class="voltar">
+				<a href="../index.php">
+					<i class="fa-solid fa-arrow-left-long"></i>
+				</a>
+			</div>
+		
 			<article class="componenteCentral faq">
 				<h2 class="titulo">FAQ</h2>
 				<section class="containerFaq">

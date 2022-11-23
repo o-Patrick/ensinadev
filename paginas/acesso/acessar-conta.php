@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="../../assets/estilos/root.css">
 		<link rel="stylesheet" href="../../assets/estilos/geral.css">
 		<link rel="stylesheet" href="../../assets/estilos/formulario.css">
+		<link rel="stylesheet" href="../../assets/estilos/btnVoltar.css" />
+		<link rel="stylesheet" href="../../assets/estilos/botao.css"/>
 
 		<!-- scripts -->
 		<script src="https://kit.fontawesome.com/33301695b5.js" crossorigin="anonymous" defer></script>
@@ -63,6 +65,13 @@
 				</a>
 			</div>
 		</header>
+
+		<!-- botão voltar -->
+		<div class="voltar">
+			<a href="../../index.php">
+				<i class="fa-solid fa-arrow-left-long"></i>
+			</a>
+		</div>
 
 		<main class="containerFlex">
 			<section class="componenteCentral">
