@@ -8,8 +8,6 @@
     if (isset($_POST["novaSenha"])) $novaSenha = $_POST["novaSenha"];
     if (isset($_POST["repeteNovaSenha"])) $repeteNovaSenha = $_POST["repeteNovaSenha"];
 
-    // echo "Nova senha " . $novaSenha . " e-mail " . $email;
-    // exit;
     try{
       $comando = $conexao -> prepare("SELECT SENHA_USUARIO FROM TB_USUARIO WHERE EMAIL_USUARIO = ?");
       $comando -> bindParam(1, $email);
@@ -18,7 +16,6 @@
         if($comando -> rowCount() > 0){
           $linha = $comando -> fetch(PDO::FETCH_OBJ);
           $senhaBco = $linha -> SENHA_USUARIO;
-          echo $senhaBco;
         } else {
           echo "<script> console.log('Não foi possível selecionar a senha atual'); </script>";
           echo "<meta http-equiv='refresh' content='0; ../../../../paginas/acesso/editar-perfil/editar-perfil.php'>";
