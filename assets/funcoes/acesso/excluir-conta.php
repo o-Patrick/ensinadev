@@ -26,7 +26,7 @@
 	// apaga progresso do usuário
 	try {
 		$comando = $conexao -> prepare("DELETE FROM TB_PROGRESSO_TEMA WHERE ID_USUARIO = ?");
-		$comando -> bindParam(1, $_SESSION["idPerfil"]);
+		$comando -> bindParam(1, $_SESSION["idUsuario"]);
 
 		if ($comando -> execute()){
 			if ($comando -> rowCount() > 0){

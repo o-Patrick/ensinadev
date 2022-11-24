@@ -1,6 +1,7 @@
 <?php
 	if (session_status() == PHP_SESSION_NONE) session_start();
 	$_SESSION["pagina"] = "item";
+	if (isset($_GET["tema"])) $_SESSION["tema"] = $_GET["tema"];
 	require "./../../assets/funcoes/temasItens/carregaItem.php";
 	require "./../../assets/funcoes/temasItens/botaoMarcarConcluido.php";
 ?>

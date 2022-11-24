@@ -77,7 +77,7 @@
     </div>
 
     <div class="button-container">
-        <button class="btn" onclick="executeCode()"> Run </button>
+        <button class="btn" onclick="executeCode()"> Executar </button>
     </div>
     
     <div class="containerIde">

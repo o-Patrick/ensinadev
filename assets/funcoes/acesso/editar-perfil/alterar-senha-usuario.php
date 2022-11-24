@@ -4,6 +4,8 @@
   require "../../conexao.php";
 
   if (isset($_POST["btnSubmit"])) {
+
+    // seleciona a senha atual
     try{
       $comando = $conexao -> prepare("SELECT SENHA_USUARIO FROM TB_USUARIO WHERE ID_USUARIO = ?");
       $comando -> bindParam(1, $_SESSION["idUsuario"]);
@@ -13,7 +15,7 @@
           $linha = $comando -> fetch(PDO::FETCH_OBJ);
           $senhaBco = $linha -> SENHA_USUARIO;
         } else {
-          echo "<script>alert('Não foi possível selecionar o valor');</script>";
+          echo "<script>alert('Não foi possível selecionar a senha atual');</script>";
           echo "<meta http-equiv='refresh' content='0; ../../../../paginas/acesso/editar-perfil/editar-perfil.php'>";
         }
       } else{
@@ -53,7 +55,7 @@
             if($comando -> execute()){
               if($comando -> rowCount() > 0){
                 echo "<script>alert('Senha alterada com sucesso!');</script>";
-                echo "<meta http-equiv='refresh' content='0; ../../../../paginas/acesso/editar-perfil/alterar-senha-usuario.php'>";
+                echo "<meta http-equiv='refresh' content='0; ../../../../paginas/acesso/editar-perfil/editar-perfil.php'>";
               } else {
                 echo "<script>alert('Não foi possível alterar a senha');</script>";
                 echo "<meta http-equiv='refresh' content='0; ../../../../paginas/acesso/editar-perfil/alterar-senha-usuario.php'>";
