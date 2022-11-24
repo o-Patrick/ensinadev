@@ -25,6 +25,7 @@
 				echo "<meta http-equiv='refresh' content='0; ../../../../paginas/acesso/areaAdm/gerenciadorPerfis.php'>";
 			} // try geral
 
+
 			// apaga progresso do usuário
 			try {
 				$comando = $conexao -> prepare("DELETE FROM TB_PROGRESSO_TEMA WHERE ID_USUARIO = ?");

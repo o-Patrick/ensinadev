@@ -36,7 +36,7 @@
 
 		// quantidade de itens concluídos no tema por aquele usuário
 		try {
-			$comando = $conexao -> prepare("SELECT * FROM TB_PROGRESSO_TEMA AS TBP JOIN TB_ITEM_TEMA AS TBI ON TBP.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA JOIN TB_TEMA AS TBT ON TBI.ID_TEMA = TBT.ID_TEMA WHERE ID_USUARIO = ?");
+			$comando = $conexao -> prepare("SELECT * FROM TB_PROGRESSO_TEMA AS TBP JOIN TB_ITEM_TEMA AS TBI ON TBP.ID_ITEM_TEMA = TBI.ID_ITEM_TEMA JOIN TB_TEMA AS TBT ON TBI.ID_TEMA = TBT.ID_TEMA WHERE TBP.ID_USUARIO = ?");
 			$comando -> bindParam(1, $_SESSION["idUsuario"]);
 
 			$qtdHtmlConcluido = 0;
