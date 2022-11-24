@@ -19,6 +19,7 @@
 		<link rel="stylesheet" href="../../../../assets/estilos/enviarTexto.css">
 		<link rel="stylesheet" href="../../../../assets/estilos/botao.css">
 		<link rel="stylesheet" href="../../../../assets/estilos/comentarios.css">
+		<link rel="stylesheet" href="../../../../assets/estilos/btnVoltar.css">
 		<link rel="stylesheet" href="../../../../assets/estilos/gerenciador.css">
 
 		<!-- scripts -->
@@ -30,7 +31,7 @@
 		<header class="containerFlex">
 			<!-- logo -->
 			<div class="logo">
-				<a href="../../index.php">
+				<a href="../../../../index.php">
 					<h1>EnsinaDev</h1>
 				</a>
 			</div>
@@ -40,16 +41,16 @@
 				<nav>
 					<menu>
 						<ul class="lista containerFlex linkMenu">
-							<a href="../../index.php" class="itemMenu linkMenu">
+							<a href="../../../../index.php" class="itemMenu linkMenu">
 								<li>Home</li>
 							</a>
-							<a href="../faq.php" class="itemMenu linkMenu">
+							<a href="../../../faq.php" class="itemMenu linkMenu">
 								<li>FAQ</li>
 							</a>
-							<a href="../sobre-nos.php" class="itemMenu linkMenu">
+							<a href="../../../sobre-nos.php" class="itemMenu linkMenu">
 								<li>Sobre nós</li>
 							</a>
-							<a href="../contato.php" class="itemMenu linkMenu">
+							<a href="../../../contato.php" class="itemMenu linkMenu">
 								<li>Contato</li>
 							</a>
 						</ul>
@@ -59,7 +60,7 @@
 
 			<!-- usuário -->
 			<div class="usuario">
-				<a href="acesso/acessar-conta.php">
+				<a href="../../acessar-conta.php">
 					<div class="iconeUsuario">
 						<?php
 							if (!isset($_SESSION["idUsuario"]) || $_SESSION["imgUsuario"] == null) {
