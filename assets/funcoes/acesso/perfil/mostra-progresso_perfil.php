@@ -58,7 +58,7 @@
 
 							$porcentCss = ($qtdCssConcluido * 100) / $qtdCss;
 							$porcentCss = number_format($porcentCss, 0);
-						} elseif ($tema === "JAVASCRIPT") {
+						} elseif ($tema === "JavaScript") {
 							++$qtdJsConcluido;
 
 							$porcentJs = ($qtdJsConcluido * 100) / $qtdJs;
